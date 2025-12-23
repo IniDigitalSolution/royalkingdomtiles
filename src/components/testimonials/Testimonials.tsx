@@ -11,39 +11,39 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
-    name: 'Mouli',
-    location: 'Trichy',
-    text: 'I had a fantastic experience with this company. Their customer service was friendly and responsive. Everything was handled quickly and professionally. The quality of the product/service was outstanding. I would definitely recommend them to others!'
+    name: 'Ramesh Kumar',
+    location: 'Chennai',
+    text: 'I purchased cool roof tiles for my new home terrace and the results are amazing! The heat has reduced a lot and the cost was very affordable compared to other brands.'
   },
   {
     id: 2,
-    name: 'Murugan',
+    name: 'Priya Selvam',
     location: 'Madurai',
-    text: 'The product I received was even better than expected. It was delivered on time and in perfect condition. The craftsmanship and attention to detail were impressive. Customer support was helpful and very knowledgeable!'
+    text: 'Bought clay tiles from Royal Kingdom. The quality is excellent, long-lasting, and the pricing is very reasonable. Truly value for money.'
   },
   {
     id: 3,
-    name: 'Jakan',
-    location: 'Kanyakumari',
-    text: 'I had a fantastic experience with this company. Their customer service was friendly and responsive. Everything was handled quickly and professionally. The quality of the tiles was outstanding. I would definitely recommend them!'
+    name: 'Murugan S',
+    location: 'Coimbatore',
+    text: 'I opted for ceramic cool roof tiles for our commercial building. Great finishing, slip-resistant and helps control indoor temperature. Very satisfied with the affordable cost.'
   },
   {
     id: 4,
-    name: 'Priya',
-    location: 'Chennai',
-    text: 'Excellent quality tiles and professional installation guidance. The team was very helpful in selecting the right tiles for our home. Highly satisfied with the entire experience!'
+    name: 'Arun Prasad',
+    location: 'Trichy',
+    text: 'Royal Kingdom supplied vitrified cool roof tiles for our apartment project. Strong tiles, premium look, and best wholesale pricing in Chennai.'
   },
   {
     id: 5,
-    name: 'Rajesh',
-    location: 'Coimbatore',
-    text: 'Best tile showroom in the city! Wide variety of designs and competitive pricing. The staff was knowledgeable and patient with all our questions. Will definitely come back for future projects.'
+    name: 'Lakshmi Narayan',
+    location: 'Salem',
+    text: 'The cost savings impressed me. Cool roof tiles reduced heat and lowered our electricity bills. A very budget-friendly option for terrace protection.'
   },
   {
     id: 6,
-    name: 'Lakshmi',
-    location: 'Salem',
-    text: 'Amazing collection of tiles with modern designs. The delivery was prompt and all tiles arrived in perfect condition. Great customer service from start to finish!'
+    name: 'Karthik Raja',
+    location: 'Kanyakumari',
+    text: 'We compared cost with other suppliers before purchasing. Royal Kingdom offered genuine pricing for clay and ceramic tiles, with excellent support throughout the process.'
   }
 ];
 
@@ -67,7 +67,7 @@ export const Testimonials: React.FC = () => {
       <div className="container mx-auto px-4">
         {/* Header with Navigation */}
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary">What Client Says About Us</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary">Customer Testimonials</h2>
 
           {/* Navigation Arrows */}
           <div className="flex gap-2">

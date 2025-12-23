@@ -76,8 +76,8 @@ export const Catalog: React.FC = () => {
         <div className="absolute inset-0 opacity-20 pointer-events-none bg-noise"></div>
         <div className="absolute inset-0 flex items-center justify-center pt-16">
           <div className="text-center container mx-auto px-4">
-            <h1 className="text-5xl md:text-6xl font-bold uppercase tracking-tight mb-4 drop-shadow-lg">Our Collection</h1>
-            <p className="text-xl md:text-2xl font-light tracking-wide opacity-90">Premium Tiles for Every Space</p>
+            <h1 className="text-5xl md:text-6xl font-bold uppercase tracking-tight mb-4 drop-shadow-lg">Cool Roof Tiles</h1>
+            <p className="text-xl md:text-2xl font-light tracking-wide opacity-90">Premium Heat Reflective & Waterproof Tiles</p>
           </div>
         </div>
       </section>
@@ -85,7 +85,7 @@ export const Catalog: React.FC = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Breadcrumbs */}
       <div className="text-xs text-gray-500 mb-6 uppercase">
-        <Link to={`/${currentLocation.slug}`} className="hover:text-[#15508b]">Home</Link> / <span className="text-gray-900 font-bold">Tiles Catalog</span>
+        <Link to={`/${currentLocation.slug}`} className="hover:text-[#15508b]">Home</Link> / <span className="text-gray-900 font-bold">Cool Roof Tiles Catalog</span>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-12">
@@ -117,7 +117,7 @@ export const Catalog: React.FC = () => {
         <div className="flex-1">
           <div className="flex justify-between items-center mb-6 border-b pb-4">
             <h1 className="text-2xl font-bold uppercase text-secondary">
-              {activeCategory || 'All Tiles'} 
+              {activeCategory || 'All Products'} 
               <span className="text-gray-400 text-lg font-normal ml-2">({filteredProducts.length})</span>
             </h1>
             <select className="border-gray-300 rounded text-sm focus:ring-[#15508b] focus:border-[#15508b] p-2">

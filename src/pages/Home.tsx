@@ -9,25 +9,25 @@ import SEO from '../components/SEO';
 // Hero slides base data for the main slider - Kajaria style
 const heroSlidesBase = [
   {
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&h=1080&fit=crop',
+    image: '/Home Page Slide/Roof_Tiles_in_Chennai.png',
     title: 'Beat the Heat\nStay Cool',
     subtitle: 'Premium cool roof tiles that reduce indoor temperature by 10-15°C. Energy efficient, eco-friendly solutions for your home.',
     productSlug: 'silver-plus'
   },
   {
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&h=1080&fit=crop',
+    image: '/Home Page Slide/Cool_Roof_Tiles_in_Chennai.png',
     title: 'Shaping Dreams\nInto Living Spaces',
     subtitle: 'Advanced dual-layer technology for maximum heat reflection and waterproof protection.',
     productSlug: 'gold'
   },
   {
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&h=1080&fit=crop',
+    image: '/Home Page Slide/Clay_Tiles_in_Chennai.png',
     title: 'Where Quality\nMeets Innovation',
     subtitle: '90% heat reflection, 100% waterproof. Built to endure, designed to impress.',
     productSlug: 'elite-gold'
   },
   {
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=1080&fit=crop',
+    image: '/Home Page Slide/Ceramic_Cool_Roof_Tiles_in_Chennai.png',
     title: 'Beauty That Lasts\nBeyond Seasons',
     subtitle: 'Our cool roof tiles bring lasting beauty and comfort to every season.',
     productSlug: 'elite-silver'
@@ -237,12 +237,12 @@ export const Home: React.FC = () => {
           {/* Category Grid - Kajaria Style */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-              { id: 1, title: 'Bathroom', image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=800&fit=crop', category: 'Bathroom' },
-              { id: 2, title: 'Kitchen', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=800&fit=crop', category: 'Kitchen' },
-              { id: 3, title: 'Living Room', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=800&fit=crop', category: 'Living Room' },
-              { id: 4, title: 'Bedroom', image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&h=800&fit=crop', category: 'Bedroom' },
-              { id: 5, title: 'Outdoor', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=800&fit=crop', category: 'Outdoor' },
-              { id: 6, title: 'Commercial Spaces', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=800&fit=crop', category: 'Commercial' }
+              { id: 1, title: 'Advanced Cool Roof Tiles', image: '/Home Page Category/Cooling_Roof_Tiles_in_Chennai.png', category: 'Advanced Cool Roof Tiles' },
+              { id: 2, title: 'Terracotta Tiles', image: '/Home Page Category/Terracotta_Roof_Tiles_in_Chennai.png', category: 'Terracotta Tiles' },
+              { id: 3, title: 'Ceramic Cool Roof Tiles', image: '/Home Page Category/Ceramic_Roof_Tiles_in_Chennai.png', category: 'Ceramic Cool Roof Tiles' },
+              { id: 4, title: 'Vitrified Cool Roof Tiles', image: '/Home Page Category/Vitrified_Cool_Roof_Tiles _in _Chennai.png', category: 'Vitrified Cool Roof Tiles' },
+              { id: 5, title: 'Premium Tile Grout', image: '/Home Page Category/Rough_Grout_in _Chennai.png', category: 'Premium Tile Grout' },
+              { id: 6, title: 'Anti-Leakage Oil', image: '/Home Page Category/Waterproofing_Solution_in _Chennai.png', category: 'Anti-Leakage Oil (Waterproofing Solution)' }
           ].map((cat, index) => (
               <Link 
                 key={cat.id} 
@@ -306,12 +306,12 @@ export const Home: React.FC = () => {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {[
-              { id: 1, title: 'Kasamood', image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=800&fit=crop' },
-              { id: 2, title: 'Duratech', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=800&fit=crop' },
-              { id: 3, title: 'Durock', image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=800&fit=crop' },
-              { id: 4, title: 'Vitronite', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=800&fit=crop' },
-              { id: 5, title: 'Grestough', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=800&fit=crop' },
-              { id: 6, title: 'UniTerra', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=800&fit=crop' },
+              { id: 1, title: 'Clay Roof Tiles', image: '/Home Page Collection/Clay_Roof_Tiles.png' },
+              { id: 2, title: 'Cool Roof Tiles', image: '/Home Page Collection/Cool_Roof_Tiles.png' },
+              { id: 3, title: 'Vitrified Cool Roof Tiles', image: '/Home Page Collection/Vitrified_Cool_Roof_Tiles.png' },
+              { id: 4, title: 'Ceramic Cool Roof Tiles', image: '/Home Page Collection/Ceramic_Cool_Roof_Tiles.png' },
+              { id: 5, title: 'Cool Roof Tiles Premium Grout', image: '/Home Page Collection/_Cool_Roof_Tiles_Premium_Grout.png' },
+              { id: 6, title: 'Waterproofing Admixture', image: '/Home Page Collection/Waterproofing_Admixture.png' },
             ].map((collection) => (
               <Link
                 key={collection.id}
@@ -324,15 +324,13 @@ export const Home: React.FC = () => {
                     alt={collection.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                  {/* Collection Name */}
-                  <div className="absolute bottom-5 left-5 flex items-center gap-2">
-                    <span className="text-white text-sm md:text-base font-medium uppercase tracking-[0.2em]">{collection.title}</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
                   </div>
+                {/* Collection Name - Below Image */}
+                <div className="py-4 flex items-center gap-2">
+                  <span className="text-black text-sm md:text-base font-medium uppercase tracking-[0.15em]">{collection.title}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
               </Link>
             ))}
@@ -351,17 +349,22 @@ export const Home: React.FC = () => {
       {/* Testimonials */}
       <Testimonials />
 
-      {/* India's No.1 Tile Company - Stats Section */}
+      {/* Chennai's No.1 Cool Roof Tiles Supply Company */}
       <section className="text-white py-16 md:py-20 bg-[#15508b]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
             {/* Left Content */}
             <div className="lg:w-1/2 animate-slide-in-left">
-              <h2 className="text-4xl md:text-5xl font-medium mb-4 leading-tight">
-                India's No.1<br />Tile Company
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 leading-tight">
+                Chennai's No.1<br />
+                Cool Roof Tiles<br />
+                Supply Company
               </h2>
-              <p className="text-white/80 text-lg mb-10 max-w-md">
-                Royal Kingdom is one of India's largest manufacturers of ceramic and vitrified tiles, with an annual <strong className="text-white">production capacity of 90.50 million square meters.</strong>
+              <p className="text-white/85 text-base md:text-lg mb-6 max-w-lg leading-relaxed">
+                Royal Kingdom is Chennai's leading supplier and authorized dealer of premium cool roof tiles, ceramic cool roof tiles, and vitrified cool roof tiles. With advanced manufacturing partnerships and a strong distribution network, we ensure <strong className="text-white">reliable supply, competitive pricing, and on-time delivery</strong> across Chennai and Tamil Nadu.
+              </p>
+              <p className="text-white/75 text-sm md:text-base mb-8 max-w-lg leading-relaxed">
+                Our cool roof tiles are engineered to reduce heat absorption, improve indoor comfort, and protect terraces from harsh weather conditions. Choose Royal Kingdom for trusted quality, wide product selection, expert guidance, and seamless service.
               </p>
               
               {/* Read More Button */}
@@ -382,31 +385,31 @@ export const Home: React.FC = () => {
             <div className="lg:w-1/2 animate-slide-in-right">
               <div className="relative rounded-tl-[100px] overflow-hidden shine-effect">
                 <img 
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop" 
-                  alt="Showroom"
+                  src="/Supply_Company.png" 
+                  alt="Royal Kingdom - Chennai's No.1 Cool Roof Tiles Supply Company"
                   className="w-full h-[350px] md:h-[500px] object-cover"
                 />
                 {/* Stats Grid Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-8">
-                  <div className="flex justify-center text-center">
-                    <div className="px-6 md:px-10 border-r border-white/30 animate-count" style={{ animationDelay: '0.1s' }}>
-                      <span className="block text-3xl md:text-5xl font-bold hover:scale-110 transition-transform">90.50<span className="text-lg md:text-2xl">MSM</span></span>
-                      <span className="uppercase text-xs md:text-sm tracking-wider text-white/80 font-medium">Production<br/>Capacity</span>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-6 md:p-8">
+                  <div className="grid grid-cols-4 gap-2 md:gap-4 text-center">
+                    <div className="animate-count" style={{ animationDelay: '0.1s' }}>
+                      <span className="block text-xl md:text-3xl lg:text-4xl font-bold hover:scale-110 transition-transform">10-15°C</span>
+                      <span className="uppercase text-[9px] md:text-[11px] tracking-wider text-white/80 font-medium leading-tight block mt-1">Heat<br/>Reduction</span>
                     </div>
-                    <div className="px-6 md:px-10 border-r border-white/30 animate-count" style={{ animationDelay: '0.2s' }}>
-                      <span className="block text-3xl md:text-5xl font-bold hover:scale-110 transition-transform">4k+</span>
-                      <span className="uppercase text-xs md:text-sm tracking-wider text-white/80 font-medium">Tiles<br/>Design</span>
+                    <div className="border-l border-white/30 animate-count" style={{ animationDelay: '0.2s' }}>
+                      <span className="block text-xl md:text-3xl lg:text-4xl font-bold hover:scale-110 transition-transform">500+</span>
+                      <span className="uppercase text-[9px] md:text-[11px] tracking-wider text-white/80 font-medium leading-tight block mt-1">Happy<br/>Customers</span>
                     </div>
-                    <div className="px-6 md:px-10 border-r border-white/30 animate-count" style={{ animationDelay: '0.3s' }}>
-                      <span className="block text-3xl md:text-5xl font-bold hover:scale-110 transition-transform">09</span>
-                      <span className="uppercase text-xs md:text-sm tracking-wider text-white/80 font-medium">Plants</span>
+                    <div className="border-l border-white/30 animate-count" style={{ animationDelay: '0.3s' }}>
+                      <span className="block text-xl md:text-3xl lg:text-4xl font-bold hover:scale-110 transition-transform">100%</span>
+                      <span className="uppercase text-[9px] md:text-[11px] tracking-wider text-white/80 font-medium leading-tight block mt-1">Waterproof<br/>Tiles</span>
                     </div>
-                    <div className="px-6 md:px-10 animate-count" style={{ animationDelay: '0.4s' }}>
-                      <span className="block text-3xl md:text-5xl font-bold hover:scale-110 transition-transform">35+</span>
-                      <span className="uppercase text-xs md:text-sm tracking-wider text-white/80 font-medium">Years<br/>Exp.</span>
-              </div>
-              </div>
-              </div>
+                    <div className="border-l border-white/30 animate-count" style={{ animationDelay: '0.4s' }}>
+                      <span className="block text-xl md:text-3xl lg:text-4xl font-bold hover:scale-110 transition-transform">90%</span>
+                      <span className="uppercase text-[9px] md:text-[11px] tracking-wider text-white/80 font-medium leading-tight block mt-1">Heat<br/>Reflection</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

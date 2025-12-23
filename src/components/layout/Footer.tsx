@@ -27,8 +27,20 @@ export const Footer: React.FC = () => {
             {/* Logo & Newsletter Section */}
             <div className="lg:col-span-2">
               {/* Logo */}
-              <Link to={`/${currentLocation.slug}`} className="inline-block mb-6">
-                <h2 className="text-3xl font-serif italic text-white">Royal Kingdom</h2>
+              <Link to={`/${currentLocation.slug}`} className="inline-flex items-center gap-3 mb-6 group">
+                <img 
+                  src="/Royal_Kingdom_Logo-01.jpg" 
+                  alt="Royal Kingdom Logo" 
+                  className="w-14 h-14 object-contain group-hover:scale-105 transition-transform rounded-sm"
+                />
+                <div className="flex flex-col">
+                  <span className="text-white text-xl font-extrabold tracking-wider leading-none uppercase" style={{ fontFamily: 'Cinzel, serif' }}>
+                    Royal Kingdom
+                  </span>
+                  <span className="text-white/70 text-[9px] font-medium tracking-[0.15em] mt-1" style={{ fontFamily: 'Cinzel, serif' }}>
+                    Royal Protection. Kingdom Quality.
+                  </span>
+                </div>
               </Link>
               
               {/* Newsletter */}

@@ -135,18 +135,20 @@ export const Header: React.FC = () => {
         <div className="container mx-auto px-4 relative">
         <div className="flex items-center justify-between">
           {/* Logo */}
-            <Link to={basePath} className="flex items-center gap-3 py-4 group">
+            <Link to={basePath} className="flex items-center gap-3 py-3 group">
               <div className="relative">
-                <div className="w-12 h-12 bg-[#15508b] rounded-sm flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <span className="text-white font-black text-2xl">R</span>
-                </div>
+                <img 
+                  src="/Royal_Kingdom_Logo-01.jpg" 
+                  alt="Royal Kingdom Logo" 
+                  className="w-14 h-14 object-contain group-hover:scale-105 transition-transform rounded-sm"
+                />
             </div>
             <div className="flex flex-col">
-                <span className="text-white text-xl font-bold tracking-wide leading-none">
+                <span className="text-white text-xl font-extrabold tracking-wider leading-none uppercase" style={{ fontFamily: 'Cinzel, serif' }}>
                   Royal Kingdom
                 </span>
-                <span className="text-white/60 text-[10px] font-medium uppercase tracking-[0.2em]">
-                  Premium Tiles
+                <span className="text-white/70 text-[9px] font-medium tracking-[0.15em] mt-1" style={{ fontFamily: 'Cinzel, serif' }}>
+                  Royal Protection. Kingdom Quality.
                 </span>
             </div>
           </Link>
