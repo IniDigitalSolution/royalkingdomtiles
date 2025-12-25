@@ -228,9 +228,9 @@ export const Home: React.FC = () => {
       >
         <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-medium text-secondary mb-6">Find Tiles by Category</h2>
+            <h2 className="text-4xl md:text-5xl font-medium text-secondary mb-6">Discover Tiles by Category</h2>
             <p className="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed">
-            Kajaria offers premium wall and floor tiles, combining advanced technology with elegant designs for lasting quality and easy maintenance.
+            Royal Kingdom offers advanced cool roof tiles, terracotta tiles, ceramic and vitrified roofing solutions, along with premium tile grout and anti-leakage oil (grout admixture) for superior durability, heat resistance, and long-lasting performance.
           </p>
         </div>
 
@@ -241,8 +241,8 @@ export const Home: React.FC = () => {
               { id: 2, title: 'Terracotta Tiles', image: '/Home Page Category/Terracotta_Roof_Tiles_in_Chennai.png', category: 'Terracotta Tiles' },
               { id: 3, title: 'Ceramic Cool Roof Tiles', image: '/Home Page Category/Ceramic_Roof_Tiles_in_Chennai.png', category: 'Ceramic Cool Roof Tiles' },
               { id: 4, title: 'Vitrified Cool Roof Tiles', image: '/Home Page Category/Vitrified_Cool_Roof_Tiles _in _Chennai.png', category: 'Vitrified Cool Roof Tiles' },
-              { id: 5, title: 'Premium Tile Grout', image: '/Home Page Category/Rough_Grout_in _Chennai.png', category: 'Premium Tile Grout' },
-              { id: 6, title: 'Anti-Leakage Oil', image: '/Home Page Category/Waterproofing_Solution_in _Chennai.png', category: 'Anti-Leakage Oil (Waterproofing Solution)' }
+              { id: 5, title: 'Premium Tile Grout', image: '/Home Page Collection/_Cool_Roof_Tiles_Premium_Grout.png', category: 'Premium Tile Grout' },
+              { id: 6, title: 'Anti-Leakage Oil', image: '/Home Page Collection/Waterproofing_Admixture.png', category: 'Anti-Leakage Oil (Waterproofing Solution)' }
           ].map((cat, index) => (
               <Link 
                 key={cat.id} 
@@ -271,9 +271,9 @@ export const Home: React.FC = () => {
         {/* Collections - Kajaria Style Carousel */}
        <section className="py-7 bg-gray-light bg-[#f0f2ef]">
           <div className="text-center mb-12 px-4 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-medium text-secondary mb-6">Collections</h2>
+            <h2 className="text-4xl md:text-5xl font-medium text-secondary mb-6">Our Collections</h2>
             <p className="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed">
-              Explore our curated selection of stylish and innovative tile designs, crafted to elevate every space with the latest trends.
+              A thoughtfully designed range of cool roof, terracotta, ceramic, and vitrified tiles for cooler, stronger, and more stylish terraces.
             </p>
           </div>
 
@@ -397,7 +397,7 @@ export const Home: React.FC = () => {
                       <span className="uppercase text-[9px] md:text-[11px] tracking-wider text-white/80 font-medium leading-tight block mt-1">Heat<br/>Reduction</span>
                     </div>
                     <div className="border-l border-white/30 animate-count" style={{ animationDelay: '0.2s' }}>
-                      <span className="block text-xl md:text-3xl lg:text-4xl font-bold hover:scale-110 transition-transform">500+</span>
+                      <span className="block text-xl md:text-3xl lg:text-4xl font-bold hover:scale-110 transition-transform">1000+</span>
                       <span className="uppercase text-[9px] md:text-[11px] tracking-wider text-white/80 font-medium leading-tight block mt-1">Happy<br/>Customers</span>
                     </div>
                     <div className="border-l border-white/30 animate-count" style={{ animationDelay: '0.3s' }}>
@@ -407,9 +407,9 @@ export const Home: React.FC = () => {
                     <div className="border-l border-white/30 animate-count" style={{ animationDelay: '0.4s' }}>
                       <span className="block text-xl md:text-3xl lg:text-4xl font-bold hover:scale-110 transition-transform">90%</span>
                       <span className="uppercase text-[9px] md:text-[11px] tracking-wider text-white/80 font-medium leading-tight block mt-1">Heat<br/>Reflection</span>
-                    </div>
-                  </div>
-                </div>
+              </div>
+              </div>
+              </div>
               </div>
             </div>
           </div>
@@ -512,11 +512,10 @@ export const Home: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white animate-fade-in-up">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium mb-6 leading-tight">
-              Ready to Transform<br />Your Space?
+              Ready to Transform<br />Your Terrace & Roof?
             </h2>
             <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Visit our showroom today and discover the perfect tiles for your dream home. 
-              Our experts are ready to help you create stunning spaces.
+              Visit our showroom and explore premium cool roof tiles, terracotta, ceramic, and vitrified solutions designed to reduce heat, improve comfort, and enhance the beauty of your terrace and roof. Our experts are ready to assist you.
             </p>
             
             {/* CTA Buttons */}
@@ -560,17 +559,17 @@ export const Home: React.FC = () => {
               <p className="text-white/60 text-sm mb-4 uppercase tracking-wider">Trusted by thousands of homeowners</p>
               <div className="flex justify-center items-center gap-8 flex-wrap">
                 <div className="text-center">
-                  <span className="block text-2xl md:text-3xl font-bold">10,000+</span>
+                  <span className="block text-2xl md:text-3xl font-bold">1,000+</span>
                   <span className="text-xs text-white/70 uppercase tracking-wider">Happy Customers</span>
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-white/30"></div>
                 <div className="text-center">
-                  <span className="block text-2xl md:text-3xl font-bold">4.8★</span>
+                  <span className="block text-2xl md:text-3xl font-bold">4.9★</span>
                   <span className="text-xs text-white/70 uppercase tracking-wider">Customer Rating</span>
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-white/30"></div>
                 <div className="text-center">
-                  <span className="block text-2xl md:text-3xl font-bold">35+</span>
+                  <span className="block text-2xl md:text-3xl font-bold">5+</span>
                   <span className="text-xs text-white/70 uppercase tracking-wider">Years Experience</span>
                 </div>
               </div>

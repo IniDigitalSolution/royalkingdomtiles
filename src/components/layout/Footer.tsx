@@ -116,28 +116,33 @@ export const Footer: React.FC = () => {
               <h4 className="text-white font-semibold mb-6">Products</h4>
               <ul className="space-y-3">
                 <li>
-                  <Link to={`/${currentLocation.slug}/products/silver-plus`} className="text-white/60 hover:text-white transition-colors text-sm">
-                    Silver Plus
+                  <Link to={`/${currentLocation.slug}/tiles?category=Clay Roof Tiles`} className="text-white/60 hover:text-white transition-colors text-sm">
+                    Clay Roof Tiles
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/${currentLocation.slug}/products/gold`} className="text-white/60 hover:text-white transition-colors text-sm">
-                    Gold
+                  <Link to={`/${currentLocation.slug}/tiles?category=Cool Roof Tiles`} className="text-white/60 hover:text-white transition-colors text-sm">
+                    Cool Roof Tiles
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/${currentLocation.slug}/products/elite-silver`} className="text-white/60 hover:text-white transition-colors text-sm">
-                    Elite Silver
+                  <Link to={`/${currentLocation.slug}/tiles?category=Vitrified Cool Roof Tiles`} className="text-white/60 hover:text-white transition-colors text-sm">
+                    Vitrified Cool Roof Tiles
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/${currentLocation.slug}/products/elite-gold`} className="text-white/60 hover:text-white transition-colors text-sm">
-                    Elite Gold
+                  <Link to={`/${currentLocation.slug}/tiles?category=Ceramic Cool Roof Tiles`} className="text-white/60 hover:text-white transition-colors text-sm">
+                    Ceramic Cool Roof Tiles
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/${currentLocation.slug}/products/economy`} className="text-white/60 hover:text-white transition-colors text-sm">
-                    Economy
+                  <Link to={`/${currentLocation.slug}/tiles?category=Cool Roof Tiles Premium Grout`} className="text-white/60 hover:text-white transition-colors text-sm">
+                    Cool Roof Tiles Premium Grout
+                  </Link>
+                </li>
+                <li>
+                  <Link to={`/${currentLocation.slug}/tiles?category=Waterproofing Admixture`} className="text-white/60 hover:text-white transition-colors text-sm">
+                    Waterproofing Admixture
                   </Link>
                 </li>
             </ul>

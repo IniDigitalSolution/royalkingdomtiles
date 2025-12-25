@@ -107,13 +107,13 @@ const generateOtherProducts = (): Product[] => {
           `https://picsum.photos/600/600?random=${catIndex * 10 + i * 3 + 1}`,
           `https://picsum.photos/600/600?random=${catIndex * 10 + i * 3 + 2}`,
           `https://picsum.photos/600/600?random=${catIndex * 10 + i * 3 + 3}`,
-        ],
+    ],
         category: category,
-        application: [APPLICATIONS[i % APPLICATIONS.length], APPLICATIONS[(i + 1) % APPLICATIONS.length]],
+    application: [APPLICATIONS[i % APPLICATIONS.length], APPLICATIONS[(i + 1) % APPLICATIONS.length]],
         collection: category.includes('Grout') || category.includes('Waterproofing') ? 'Accessories' : COLLECTIONS[i % COLLECTIONS.length],
         size: category.includes('Grout') || category.includes('Waterproofing') ? 'Various' : SIZES[i % SIZES.length],
-        finish: FINISHES[i % FINISHES.length],
-        color: COLORS[i % COLORS.length],
+    finish: FINISHES[i % FINISHES.length],
+    color: COLORS[i % COLORS.length],
         shortDesc: category.includes('Grout') 
           ? 'High-strength grout for superior tile bonding and long-lasting finish.'
           : category.includes('Waterproofing')
