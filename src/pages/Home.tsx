@@ -92,7 +92,7 @@ export const Home: React.FC = () => {
       />
     <div className="flex flex-col">
       {/* Hero Section - Kajaria Style Full Screen Slider */}
-      <section className="relative h-screen w-full overflow-hidden bg-[#1a1a1a]">
+      <section className="relative min-h-[60vh] md:h-screen w-full overflow-hidden bg-[#1a1a1a] pt-16 md:pt-0">
         {/* Hero Slides */}
         {heroSlides.map((slide, index) => (
           <div
@@ -108,7 +108,7 @@ export const Home: React.FC = () => {
               <img 
                 src={slide.image} 
                 alt={slide.title} 
-                className={`w-full h-full object-cover ${
+                className={`w-full h-full object-cover object-center ${
                   index === currentSlide ? 'zoom_banner' : ''
                 }`}
               />
@@ -118,9 +118,9 @@ export const Home: React.FC = () => {
             
             {/* Banner Text - Centered */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center px-4 max-w-4xl mx-auto">
+              <div className="text-center px-4 max-w-xl sm:max-w-3xl mx-auto">
                 <h2 
-                  className={`text-white text-3xl md:text-5xl lg:text-6xl font-light mb-6 leading-tight transition-all duration-700 ${
+                  className={`text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light mb-4 sm:mb-6 leading-tight transition-all duration-700 ${
                     index === currentSlide 
                       ? 'opacity-100 translate-y-0' 
                       : 'opacity-0 translate-y-8'
@@ -130,7 +130,7 @@ export const Home: React.FC = () => {
                   <span dangerouslySetInnerHTML={{ __html: slide.title.replace('\n', '<br/>') }} />
                 </h2>
                 <p 
-                  className={`text-white/90 text-base md:text-xl lg:text-2xl font-light mb-10 max-w-2xl mx-auto transition-all duration-700 ${
+                  className={`text-white/90 text-sm sm:text-base md:text-xl lg:text-2xl font-light mb-6 sm:mb-10 max-w-2xl mx-auto transition-all duration-700 ${
                     index === currentSlide 
                       ? 'opacity-100 translate-y-0' 
                       : 'opacity-0 translate-y-8'
@@ -151,13 +151,13 @@ export const Home: React.FC = () => {
                 >
                   <Link 
                     to={slide.link}
-                    className="inline-flex items-center gap-4 group"
+                    className="inline-flex items-center gap-3 sm:gap-4 group px-4 py-2 sm:px-0 sm:py-0"
                   >
-                    <span className="text-white text-sm md:text-base uppercase tracking-[0.2em] font-medium border-b-2 border-white/50 pb-1 group-hover:border-white transition-colors">
+                    <span className="text-white text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] font-medium border-b border-white/50 pb-1 group-hover:border-white transition-colors">
                     Explore Range
                     </span>
-                    <span className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white/70 flex items-center justify-center group-hover:bg-white group-hover:text-[#1a1a1a] transition-all">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 text-white group-hover:text-[#1a1a1a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <span className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-2 border-white/70 flex items-center justify-center group-hover:bg-white group-hover:text-[#1a1a1a] transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white group-hover:text-[#1a1a1a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </span>
@@ -171,7 +171,7 @@ export const Home: React.FC = () => {
         {/* Left Arrow */}
         <button
           onClick={() => setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-white hover:text-white/80 transition-all z-20 group"
+          className="hidden sm:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 items-center justify-center text-white hover:text-white/80 transition-all z-20 group"
           aria-label="Previous slide"
         >
           <div className="relative">
@@ -185,7 +185,7 @@ export const Home: React.FC = () => {
         {/* Right Arrow */}
         <button
           onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-white hover:text-white/80 transition-all z-20 group"
+          className="hidden sm:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 items-center justify-center text-white hover:text-white/80 transition-all z-20 group"
           aria-label="Next slide"
         >
           <div className="relative">
@@ -197,7 +197,7 @@ export const Home: React.FC = () => {
         </button>
 
         {/* Pagination Dots */}
-        <div className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 flex gap-2 md:gap-3 z-20">
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-12 left-1/2 transform -translate-x-1/2 flex gap-2 md:gap-3 z-20">
           {heroSlides.map((_, idx) => (
             <button
               key={idx}

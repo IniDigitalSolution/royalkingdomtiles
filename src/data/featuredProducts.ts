@@ -43,6 +43,12 @@ export interface FeaturedProduct {
   }[];
 }
 
+// Static asset paths (URL-encoded for spaces) mapped to real product images
+const FP_IMG_SILVER_PLUS = '/Products/Cool_Roof_Tiles_in_Chennai_Sliver.jpg';
+const FP_IMG_GOLD = '/Products/Cooling_Tiles_Price_in_Chennai-GOLD.jpg';
+const FP_IMG_ELITE_SILVER = '/Products/Cooling_Roof_Tiles_in_Chennai-Elite%20Sliver.jpg';
+const FP_IMG_ELITE_GOLD = '/Products/White_Cooling_Roof_Tiles_in_Chennai-Elite%20Gold.jpg';
+
 export const FEATURED_PRODUCTS: FeaturedProduct[] = [
   {
     id: 'silver-plus',
@@ -53,9 +59,9 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     heroDescription: 'Introducing the Silver Plus model — the smart choice for homeowners, builders, and architects who demand maximum cooling, and long-term durability. Designed with cutting-edge technology, this tile combines thermal insulation and mechanical strength into a single powerful solution.',
     detailedDescription: 'With its special dual-layer construction, the Silver Plus tile not only lowers indoor temperatures but also extends the life of your building — making it the ideal terrace solution for extreme heat and unpredictable monsoons.',
     images: {
-      front: '/products/silver-plus-front.jpg',
-      bottom: '/products/silver-plus-bottom.jpg',
-      breakView: '/products/silver-plus-break.jpg',
+      front: FP_IMG_SILVER_PLUS,
+      bottom: FP_IMG_SILVER_PLUS,
+      breakView: FP_IMG_SILVER_PLUS,
     },
     layers: [
       {
@@ -153,9 +159,9 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     heroDescription: 'The Gold Premium model offers enhanced thermal protection with premium-grade materials. Ideal for those who want the perfect balance of cooling efficiency and aesthetic appeal.',
     detailedDescription: 'Our Gold series features advanced mineral coating technology that provides superior heat reflection while maintaining an elegant appearance that complements any architectural style.',
     images: {
-      front: '/products/gold-front.jpg',
-      bottom: '/products/gold-bottom.jpg',
-      breakView: '/products/gold-break.jpg',
+      front: FP_IMG_GOLD,
+      bottom: FP_IMG_GOLD,
+      breakView: FP_IMG_GOLD,
     },
     layers: [
       {
@@ -253,9 +259,9 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     heroDescription: 'The Elite Silver series is engineered for professionals who demand the highest standards. Perfect for large-scale commercial and industrial applications.',
     detailedDescription: 'Featuring industrial-grade materials and precision engineering, Elite Silver tiles deliver consistent performance across massive roof areas while maintaining cost efficiency.',
     images: {
-      front: '/products/elite-silver-front.jpg',
-      bottom: '/products/elite-silver-bottom.jpg',
-      breakView: '/products/elite-silver-break.jpg',
+      front: FP_IMG_ELITE_SILVER,
+      bottom: FP_IMG_ELITE_SILVER,
+      breakView: FP_IMG_ELITE_SILVER,
     },
     layers: [
       {
@@ -353,9 +359,9 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     heroDescription: 'Elite Gold represents the pinnacle of cool roof technology. Combining the best materials with advanced engineering for unmatched performance.',
     detailedDescription: 'For those who accept nothing but the best, Elite Gold delivers premium aesthetics, maximum heat reduction, and exceptional durability in one superior product.',
     images: {
-      front: '/products/elite-gold-front.jpg',
-      bottom: '/products/elite-gold-bottom.jpg',
-      breakView: '/products/elite-gold-break.jpg',
+      front: FP_IMG_ELITE_GOLD,
+      bottom: FP_IMG_ELITE_GOLD,
+      breakView: FP_IMG_ELITE_GOLD,
     },
     layers: [
       {
@@ -445,103 +451,100 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     ],
   },
   {
-    id: 'economy',
-    slug: 'economy',
-    name: 'Economy Cool Roof Tiles',
-    shortName: 'Economy',
-    tagline: 'Affordable Cooling Solution',
-    heroDescription: 'Our Economy series makes cool roof technology accessible to everyone. Get effective heat protection without breaking the bank.',
-    detailedDescription: 'Designed for budget-conscious buyers who still want quality thermal protection, the Economy series delivers reliable cooling performance at an unbeatable price point.',
+    id: 'vitrified',
+    slug: 'vitrified-cool-roof-tiles',
+    name: 'Vitrified Cool Roof Tiles',
+    shortName: 'Vitrified',
+    tagline: 'High-SRI, Slip-Resistant Vitrified Cooling',
+    heroDescription: 'Vitrified cool roof tiles engineered with high Solar Reflectance Index to cut roof temperatures by 10–15% and improve indoor comfort.',
+    detailedDescription: 'These vitrified tiles use high-reflectance minerals (SRI > 90) with a moisture-resistant, anti-skid surface — ideal for terraces, balconies, exterior facades, pavements, and high-traffic rooftop areas. Built to reduce heat gain, save electricity, and deliver durable, low-maintenance performance.',
     images: {
-      front: '/products/economy-front.jpg',
-      bottom: '/products/economy-bottom.jpg',
-      breakView: '/products/economy-break.jpg',
+      front: FP_IMG_GOLD,
+      bottom: FP_IMG_GOLD,
+      breakView: FP_IMG_GOLD,
     },
     layers: [
       {
-        title: 'Top Layer (5mm of White Reflective Coating)',
+        title: 'Top Layer (High-SRI Vitrified Surface)',
         color: 'cyan',
         points: [
-          'Standard SRI minerals with 85% reflectance',
-          'Effective thermal insulation for basic cooling',
-          'Weather-resistant surface',
-          'Clean white appearance',
+          'LEED-grade SRI > 90 for strong solar reflection',
+          'Reduces roof surface temperature by ~10–15%',
+          'UV- and stain-resistant vitrified glaze',
+          'Slip-resistant matte texture for safety in wet areas',
         ],
       },
       {
-        title: 'Bottom Layer (7mm of Standard Concrete)',
+        title: 'Bottom Layer (Reinforced Vitrified Body)',
         color: 'gray',
         points: [
-          'Quality cement composition',
-          'Adequate load-bearing for residential use',
-          'Basic waterproofing',
-          'Reliable structural integrity',
+          'Dense vitrified base for strength and durability',
+          'Moisture-resistant body to prevent seepage',
+          'Designed for heavy foot traffic on terraces and pavements',
+          'Stable under thermal cycling and monsoon exposure',
         ],
       },
     ],
     whyBest: [
-      { icon: 'thermometer', title: 'Reduces Temperature by up to 7°C' },
-      { icon: 'shield-check', title: 'Standard Anti-Skid Surface' },
-      { icon: 'sun', title: 'Good Reflectivity (SRI > 85%)' },
-      { icon: 'wallet', title: 'Most Affordable Option' },
-      { icon: 'bolt', title: 'Reliable Energy Savings' },
-      { icon: 'calendar', title: 'Solid 8 Year Lifespan' },
+      { icon: 'thermometer', title: 'Cuts Heat Gain by 10–15%' },
+      { icon: 'shield-check', title: 'Anti-Skid Matte Surface' },
+      { icon: 'sun', title: 'High SRI > 90 Reflectivity' },
+      { icon: 'cloud', title: 'Moisture & Stain Resistant' },
+      { icon: 'bolt', title: 'Energy Savings on Cooling' },
+      { icon: 'calendar', title: 'Long-Life Vitrified Durability' },
     ],
     specifications: [
-      { feature: 'Color', details: 'White, Grey Base' },
-      { feature: 'Size', details: '10 inch × 10 inch (254mm x 254mm approx.)' },
-      { feature: 'Total Thickness', details: '12mm (±1mm)' },
-      { feature: 'Top Layer Material', details: 'Standard SRI White Minerals' },
-      { feature: 'Base Layer Material', details: 'Standard Cement Concrete' },
-      { feature: 'Surface Type', details: 'Basic Anti-Skid Texture' },
-      { feature: 'Weight', details: '±1.5 kg' },
-      { feature: 'Solar Reflectance', details: '> 85% SRI' },
-      { feature: 'Water Absorption', details: '< 6.0%' },
-      { feature: 'Warpage', details: '0.3 mm' },
-      { feature: 'Flexural Strength', details: '4.2 N/mm²' },
-      { feature: 'Lifespan', details: '8+ Years' },
-      { feature: 'Application Areas', details: 'Residential Terrace, Small Buildings' },
-      { feature: 'Maintenance', details: 'Regular Cleaning Recommended' },
+      { feature: 'Color', details: 'High-reflective White / Light Grey' },
+      { feature: 'Size', details: '12 inch × 12 inch (305mm x 305mm approx.)' },
+      { feature: 'Total Thickness', details: '18mm (±1mm)' },
+      { feature: 'Top Layer Material', details: 'High-SRI vitrified glaze' },
+      { feature: 'Base Layer Material', details: 'Reinforced vitrified body' },
+      { feature: 'Surface Type', details: 'Matte, anti-skid' },
+      { feature: 'Weight', details: '±3 kg' },
+      { feature: 'Solar Reflectance', details: '> 90% SRI' },
+      { feature: 'Water Absorption', details: 'Low, moisture-resistant' },
+      { feature: 'Application Areas', details: 'Terrace, Balcony, Facade, Pavements, High-Traffic Rooftops' },
+      { feature: 'Maintenance', details: 'Easy clean, low maintenance' },
     ],
     benefits: [
       {
         icon: 'thermometer',
-        title: 'Effective Basic Cooling',
-        description: 'Achieve noticeable temperature reduction at an affordable price point.',
+        title: 'Lower Surface Heat',
+        description: 'High-SRI surface reflects solar radiation to keep roofs cooler.',
       },
       {
         icon: 'bolt',
-        title: 'Budget-Friendly Savings',
-        description: 'Reduce your energy bills without a major upfront investment.',
+        title: 'Energy Efficient',
+        description: 'Reduced heat gain trims AC usage and electricity bills.',
       },
       {
         icon: 'droplet',
-        title: 'Basic Water Protection',
-        description: 'Standard waterproofing suitable for most residential applications.',
+        title: 'Moisture Resistant',
+        description: 'Vitrified body resists water ingress and seepage.',
       },
       {
         icon: 'shield',
-        title: 'Safe Walking Surface',
-        description: 'Anti-skid texture provides adequate safety for daily use.',
+        title: 'Safe to Walk',
+        description: 'Matte anti-skid finish for wet or high-traffic areas.',
       },
       {
         icon: 'sun',
-        title: 'Weather Tolerant',
-        description: 'Handles normal weather conditions reliably.',
+        title: 'Weather Durable',
+        description: 'Built to withstand UV, heat, and monsoon cycles.',
       },
       {
         icon: 'sparkles',
-        title: 'Easy Installation',
-        description: 'Lightweight design makes installation quick and cost-effective.',
+        title: 'Clean Look',
+        description: 'Stain-resistant surface stays bright with minimal upkeep.',
       },
     ],
     applications: [
-      { icon: 'home', name: 'Residential Homes' },
-      { icon: 'building', name: 'Small Offices' },
-      { icon: 'store', name: 'Small Shops' },
-      { icon: 'sun', name: 'Balconies' },
-      { icon: 'garage', name: 'Garages' },
-      { icon: 'shed', name: 'Utility Sheds' },
+      { icon: 'home', name: 'Residential Terraces' },
+      { icon: 'building', name: 'Commercial Rooftops' },
+      { icon: 'factory', name: 'Industrial Buildings' },
+      { icon: 'sun', name: 'Balconies & Facades' },
+      { icon: 'warehouse', name: 'Pavements & Walkways' },
+      { icon: 'school', name: 'Institutions & Public Spaces' },
     ],
   },
 ];
