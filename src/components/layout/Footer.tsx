@@ -149,7 +149,7 @@ export const Footer: React.FC = () => {
           </div>
 
             {/* Applications Column */}
-          <div>
+          {/* <div>
               <h4 className="text-white font-semibold mb-6">Applications</h4>
               <ul className="space-y-3">
                 <li>
@@ -183,7 +183,7 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
             </ul>
-          </div>
+          </div> */}
 
             {/* Company Column */}
           <div>
@@ -196,12 +196,12 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a href="#" className="text-white/60 hover:text-white transition-colors text-sm">
-                    Careers
+                    Products
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-white/60 hover:text-white transition-colors text-sm">
-                    Certifications
+                    Gallery
                   </a>
                 </li>
                 <li>
@@ -226,16 +226,7 @@ export const Footer: React.FC = () => {
                     Where to Buy
                   </Link>
                 </li>
-                <li>
-                  <a href="#" className="text-white/60 hover:text-white transition-colors text-sm">
-                    Dealer Locator
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white/60 hover:text-white transition-colors text-sm">
-                    FAQs
-                  </a>
-                </li>
+                
             </ul>
           </div>
           </div>
