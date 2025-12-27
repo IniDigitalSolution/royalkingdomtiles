@@ -41,8 +41,8 @@ export const ProductDetail: React.FC = () => {
       <div className="flex flex-col lg:flex-row gap-12">
         {/* Gallery */}
         <div className="lg:w-1/2">
-          <div className="w-full aspect-square bg-gray-100 mb-4 rounded-lg overflow-hidden shadow-sm">
-            <img src={product.images[selectedImage]} alt={product.name} className="w-full h-full object-cover" />
+          <div className="w-full aspect-square bg-white mb-4 rounded-lg overflow-hidden shadow-sm flex items-center justify-center">
+            <img src={product.images[selectedImage]} alt={product.name} className="w-full h-full object-contain" />
           </div>
           <div className="flex gap-4 overflow-x-auto pb-2">
             {product.images.map((img, idx) => (
@@ -51,7 +51,7 @@ export const ProductDetail: React.FC = () => {
                 onClick={() => setSelectedImage(idx)}
                 className={`w-24 h-24 shrink-0 rounded overflow-hidden border-2 ${selectedImage === idx ? 'border-[#15508b]' : 'border-transparent'}`}
               >
-                <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                <img src={img} alt="Thumbnail" className="w-full h-full object-contain bg-white" />
               </button>
             ))}
           </div>
