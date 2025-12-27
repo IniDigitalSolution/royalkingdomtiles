@@ -108,9 +108,7 @@ export const Home: React.FC = () => {
               <img 
                 src={slide.image} 
                 alt={slide.title} 
-                className={`w-full h-full object-contain sm:object-cover object-center ${
-                  index === currentSlide ? 'zoom_banner' : ''
-                }`}
+                className="w-full h-full object-contain sm:object-cover object-center"
               />
             </div>
           </div>
@@ -166,7 +164,7 @@ export const Home: React.FC = () => {
 
       {/* Find Tiles by Category */}
         <section 
-          className="py-2 md:py-12 relative -mt-11 md:mt-7"
+          className="py-2 md:py-12 relative -mt-9 md:mt-8"
         style={{ 
           backgroundImage: 'url(/image.png)',
           backgroundSize: 'cover',

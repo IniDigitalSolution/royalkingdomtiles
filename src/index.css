@@ -167,11 +167,7 @@ body {
   }
 }
 
-.zoom_banner {
-  -webkit-animation: zoomeffect 8s ease-out forwards;
-  -moz-animation: zoomeffect 8s ease-out forwards;
-  animation: zoomeffect 8s ease-out forwards;
-}
+/* .zoom_banner removed (no zoom animation) */
 
 /* Header Gradient - Kajaria Style (Blue) */
 .header-gradient {
