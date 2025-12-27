@@ -193,7 +193,7 @@ export const Header: React.FC = () => {
 
         {/* Mobile Menu */}
         <div className={clsx(
-          "lg:hidden absolute top-full left-0 right-0 bg-secondary/98 backdrop-blur-md shadow-xl transition-all duration-300 overflow-hidden",
+          "lg:hidden absolute top-full left-0 right-0 bg-[#15508b] shadow-xl transition-all duration-300 overflow-hidden",
           mobileMenuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         )}>
           <div className="container mx-auto px-4 py-6 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
