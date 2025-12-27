@@ -27,9 +27,14 @@ export const AboutUs: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="https://picsum.photos/800/600?random=100"
+                src="/Cool_Roof_Tiles_Showroom_in_Chennai.png"
                 alt="Our Store"
                 className="w-full h-auto rounded-lg shadow-lg"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src = '/Supply_Company.png';
+                }}
               />
             </div>
             <div className="space-y-4 text-gray-700 leading-relaxed">

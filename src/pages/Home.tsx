@@ -385,9 +385,14 @@ export const Home: React.FC = () => {
             <div className="lg:w-1/2 animate-slide-in-right">
               <div className="relative rounded-tl-[100px] overflow-hidden shine-effect">
                 <img 
-                  src="/Supply_Company.png" 
+                  src="/Cool_Roof_Tiles_Showroom_in_Chennai.png" 
                   alt="Royal Kingdom - Chennai's No.1 Cool Roof Tiles Supply Company"
                   className="w-full h-[350px] md:h-[500px] object-cover"
+                  onError={(e) => { 
+                    const target = e.target as HTMLImageElement; 
+                    target.onerror = null; 
+                    target.src = '/Supply_Company.png'; 
+                  }}
                 />
                 {/* Stats Grid Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-6 md:p-8">
