@@ -9,25 +9,25 @@ import SEO from '../components/SEO';
 // Hero slides base data for the main slider - Kajaria style
 const heroSlidesBase = [
   {
-    image: '/Home Page Slide/Roof_Tiles_in_Chennai.png',
+    image: '/Home Page Slide/Ceramic_Cool_Roof_Tiles_in_Chennai_3.png',
     title: 'Beat the Heat\nStay Cool',
     subtitle: 'Premium cool roof tiles that reduce indoor temperature by 10-15°C. Energy efficient, eco-friendly solutions for your home.',
     productSlug: 'silver-plus'
   },
   {
-    image: '/Home Page Slide/Cool_Roof_Tiles_in_Chennai.png',
+    image: '/Home Page Slide/Clay_Roof_Tiles_in_Chennai_4.png',
     title: 'Shaping Dreams\nInto Living Spaces',
     subtitle: 'Advanced dual-layer technology for maximum heat reflection and waterproof protection.',
     productSlug: 'gold'
   },
   {
-    image: '/Home Page Slide/Clay_Tiles_in_Chennai.png',
+    image: '/Home Page Slide/Cool_Roof_Tiles_Dealer_in_Chennai_1.jpeg',
     title: 'Where Quality\nMeets Innovation',
     subtitle: '90% heat reflection, 100% waterproof. Built to endure, designed to impress.',
     productSlug: 'elite-gold'
   },
   {
-    image: '/Home Page Slide/Ceramic_Cool_Roof_Tiles_in_Chennai.png',
+    image: '/Home Page Slide/Cooling_Roof_Tiles_in_Chennai_2.png',
     title: 'Beauty That Lasts\nBeyond Seasons',
     subtitle: 'Our cool roof tiles bring lasting beauty and comfort to every season.',
     productSlug: 'elite-silver'
@@ -92,7 +92,7 @@ export const Home: React.FC = () => {
       />
     <div className="flex flex-col">
       {/* Hero Section - Kajaria Style Full Screen Slider */}
-      <section className="relative min-h-[60vh] md:h-screen w-full overflow-hidden bg-[#1a1a1a] pt-16 md:pt-0">
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen w-full overflow-hidden bg-white pt-16 md:pt-0">
         {/* Hero Slides */}
         {heroSlides.map((slide, index) => (
           <div
@@ -103,67 +103,15 @@ export const Home: React.FC = () => {
                 : 'opacity-0 z-0'
             }`}
           >
-            {/* Image with Overlay */}
+            {/* Image only */}
             <div className="absolute inset-0 overflow-hidden">
               <img 
                 src={slide.image} 
                 alt={slide.title} 
-                className={`w-full h-full object-cover object-center ${
+                className={`w-full h-full object-contain sm:object-cover object-center ${
                   index === currentSlide ? 'zoom_banner' : ''
                 }`}
               />
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/40"></div>
-            </div>
-            
-            {/* Banner Text - Centered */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center px-4 max-w-xl sm:max-w-3xl mx-auto">
-                <h2 
-                  className={`text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light mb-4 sm:mb-6 leading-tight transition-all duration-700 ${
-                    index === currentSlide 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ transitionDelay: index === currentSlide ? '300ms' : '0ms' }}
-                >
-                  <span dangerouslySetInnerHTML={{ __html: slide.title.replace('\n', '<br/>') }} />
-                </h2>
-                <p 
-                  className={`text-white/90 text-sm sm:text-base md:text-xl lg:text-2xl font-light mb-6 sm:mb-10 max-w-2xl mx-auto transition-all duration-700 ${
-                    index === currentSlide 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ transitionDelay: index === currentSlide ? '500ms' : '0ms' }}
-                >
-                  {slide.subtitle}
-                </p>
-                
-                {/* Explore Range Button */}
-                <div 
-                  className={`transition-all duration-700 ${
-                    index === currentSlide 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ transitionDelay: index === currentSlide ? '700ms' : '0ms' }}
-                >
-                  <Link 
-                    to={slide.link}
-                    className="inline-flex items-center gap-3 sm:gap-4 group px-4 py-2 sm:px-0 sm:py-0"
-                  >
-                    <span className="text-white text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] font-medium border-b border-white/50 pb-1 group-hover:border-white transition-colors">
-                    Explore Range
-                    </span>
-                    <span className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-2 border-white/70 flex items-center justify-center group-hover:bg-white group-hover:text-[#1a1a1a] transition-all">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white group-hover:text-[#1a1a1a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </span>
-                </Link>
-                </div>
-              </div>
             </div>
           </div>
         ))}
@@ -171,12 +119,12 @@ export const Home: React.FC = () => {
         {/* Left Arrow */}
         <button
           onClick={() => setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
-          className="hidden sm:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 items-center justify-center text-white hover:text-white/80 transition-all z-20 group"
+          className="flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 items-center justify-center text-white hover:text-white transition-all z-20 group"
           aria-label="Previous slide"
         >
-          <div className="relative">
-            <span className="absolute inset-0 rounded-full border-2 border-white/30 group-hover:border-white/60 transition-colors"></span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="relative w-full h-full flex items-center justify-center">
+            <span className="absolute inset-0 rounded-full border-2 border-white/40 bg-black/35 group-hover:bg-black/55 group-hover:border-white/70 transition-colors backdrop-blur-[2px]"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7 relative" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
           </svg>
           </div>
@@ -185,12 +133,12 @@ export const Home: React.FC = () => {
         {/* Right Arrow */}
         <button
           onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
-          className="hidden sm:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 items-center justify-center text-white hover:text-white/80 transition-all z-20 group"
+          className="flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 items-center justify-center text-white hover:text-white transition-all z-20 group"
           aria-label="Next slide"
         >
-          <div className="relative">
-            <span className="absolute inset-0 rounded-full border-2 border-white/30 group-hover:border-white/60 transition-colors"></span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="relative w-full h-full flex items-center justify-center">
+            <span className="absolute inset-0 rounded-full border-2 border-white/40 bg-black/35 group-hover:bg-black/55 group-hover:border-white/70 transition-colors backdrop-blur-[2px]"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7 relative" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
           </svg>
           </div>
@@ -213,12 +161,12 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Content sections below hero */}
-      <div className="flex flex-col gap-16 py-16">
+        {/* Content sections below hero */}
+        <div className="flex flex-col gap-1 pb-14 pt-0">
 
       {/* Find Tiles by Category */}
-      <section 
-        className="py-16 relative"
+        <section 
+          className="py-2 md:py-12 relative -mt-11 md:mt-7"
         style={{ 
           backgroundImage: 'url(/image.png)',
           backgroundSize: 'cover',

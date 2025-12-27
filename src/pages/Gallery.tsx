@@ -9,25 +9,38 @@ interface GalleryImage {
 }
 
 const GALLERY_IMAGES: GalleryImage[] = [
-  { id: 1, url: 'https://picsum.photos/800/600?random=201', title: 'Modern Living Room', category: 'Living Room' },
-  { id: 2, url: 'https://picsum.photos/800/600?random=202', title: 'Luxury Bathroom', category: 'Bathroom' },
-  { id: 3, url: 'https://picsum.photos/800/600?random=203', title: 'Contemporary Kitchen', category: 'Kitchen' },
-  { id: 4, url: 'https://picsum.photos/800/600?random=204', title: 'Elegant Bedroom', category: 'Bedroom' },
-  { id: 5, url: 'https://picsum.photos/800/600?random=205', title: 'Outdoor Patio', category: 'Outdoor' },
-  { id: 6, url: 'https://picsum.photos/800/600?random=206', title: 'Office Space', category: 'Commercial' },
-  { id: 7, url: 'https://picsum.photos/800/600?random=207', title: 'Master Bathroom', category: 'Bathroom' },
-  { id: 8, url: 'https://picsum.photos/800/600?random=208', title: 'Open Kitchen', category: 'Kitchen' },
-  { id: 9, url: 'https://picsum.photos/800/600?random=209', title: 'Living Area', category: 'Living Room' },
-  { id: 10, url: 'https://picsum.photos/800/600?random=210', title: 'Garden Pathway', category: 'Outdoor' },
-  { id: 11, url: 'https://picsum.photos/800/600?random=211', title: 'Guest Bedroom', category: 'Bedroom' },
-  { id: 12, url: 'https://picsum.photos/800/600?random=212', title: 'Reception Area', category: 'Commercial' },
-  { id: 13, url: 'https://picsum.photos/800/600?random=213', title: 'Powder Room', category: 'Bathroom' },
-  { id: 14, url: 'https://picsum.photos/800/600?random=214', title: 'Breakfast Nook', category: 'Kitchen' },
-  { id: 15, url: 'https://picsum.photos/800/600?random=215', title: 'Dining Hall', category: 'Living Room' },
-  { id: 16, url: 'https://picsum.photos/800/600?random=216', title: 'Balcony Design', category: 'Outdoor' },
+  // Cool Roof Tiles
+  { id: 1, url: '/Products/Cool_Roof_Tiles_in_Chennai_Sliver.jpg', title: 'Silver Plus - Cool Roof', category: 'Cool Roof Tiles' },
+  { id: 2, url: '/Products/Cooling_Tiles_Price_in_Chennai-GOLD.jpg', title: 'Gold - Cool Roof', category: 'Cool Roof Tiles' },
+  { id: 3, url: '/Products/Cooling_Roof_Tiles_in_Chennai-Elite%20Sliver.jpg', title: 'Elite Silver - Cool Roof', category: 'Cool Roof Tiles' },
+  { id: 4, url: '/Products/White_Cooling_Roof_Tiles_in_Chennai-Elite%20Gold.jpg', title: 'Elite Gold - Cool Roof', category: 'Cool Roof Tiles' },
+
+  // Vitrified Cool Roof Tiles
+  { id: 5, url: '/Products/Blue.png', title: 'Blue - Vitrified Cool Roof', category: 'Vitrified Cool Roof Tiles' },
+  { id: 6, url: '/Products/IVORY-image1.png', title: 'Ivory - Vitrified Cool Roof', category: 'Vitrified Cool Roof Tiles' },
+  { id: 7, url: '/Products/Pink.png', title: 'Pink - Vitrified Cool Roof', category: 'Vitrified Cool Roof Tiles' },
+  { id: 8, url: '/Products/Alomond.png', title: 'Almond - Vitrified Cool Roof', category: 'Vitrified Cool Roof Tiles' },
+
+  // Ceramic Cool Roof Tiles
+  { id: 9, url: '/Products/Ceramic%20600x600%20Main%20Image.jpg', title: 'Ceramic 600x600 Main', category: 'Ceramic Cool Roof Tiles' },
+  { id: 10, url: '/Products/Ceramic%20Preview%20Image%20300%20x%20300.jpg', title: 'Ceramic 600x600 Preview', category: 'Ceramic Cool Roof Tiles' },
+  { id: 11, url: '/Products/Product%202%20Main%20Ceramic%20Cool%20Roof%20Tile%20600%20x600.jpg', title: 'Ceramic Product 2 Main', category: 'Ceramic Cool Roof Tiles' },
+  { id: 12, url: '/Products/Product%202%20Ceramic%20Cool%20Roof%20Tile%20300%20x300.jpg', title: 'Ceramic Product 2 Preview', category: 'Ceramic Cool Roof Tiles' },
+  { id: 13, url: '/Products/Ceramic%20Product%203%20main%20image%20600x600.jpg', title: 'Ceramic Product 3 Main', category: 'Ceramic Cool Roof Tiles' },
+  { id: 14, url: '/Products/Ceramic%20product%203%20preview%20300x300.jpg', title: 'Ceramic Product 3 Preview', category: 'Ceramic Cool Roof Tiles' },
+
+  // Clay Tiles
+  { id: 15, url: '/Products/Clay%20Tile%20Main%20Product%20Image%20600x600.jpg', title: 'Clay Tile Main', category: 'Clay Tiles' },
+  { id: 16, url: '/Products/Clay%20Tiles%20Preview%20Image%20300x300.jpg', title: 'Clay Tile Preview', category: 'Clay Tiles' },
 ];
 
-const CATEGORIES = ['All', 'Living Room', 'Bathroom', 'Kitchen', 'Bedroom', 'Outdoor', 'Commercial'];
+const CATEGORIES = [
+  'All',
+  'Cool Roof Tiles',
+  'Vitrified Cool Roof Tiles',
+  'Ceramic Cool Roof Tiles',
+  'Clay Tiles',
+];
 
 export const Gallery: React.FC = () => {
   const { currentLocation } = useLocationData();
