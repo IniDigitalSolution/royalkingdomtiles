@@ -246,7 +246,7 @@ export const Home: React.FC = () => {
           ].map((cat, index) => (
               <Link 
                 key={cat.id} 
-                to={`/${currentLocation.slug}/tiles?category=${cat.category}`}
+                to={`/${currentLocation.slug}/tiles`}
                 className="group relative block overflow-hidden hover-lift shine-effect animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >

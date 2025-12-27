@@ -4,82 +4,6 @@ import { useLocationData } from '../../context/LocationContext';
 import { LOCATIONS, BUSINESS_INFO } from '../../data/locations';
 import { clsx } from 'clsx';
 
-interface DropdownItem {
-  label: string;
-  to?: string;
-  external?: boolean;
-}
-
-interface NavItemWithDropdownProps {
-  label: string;
-  items: DropdownItem[];
-  basePath: string;
-}
-
-const NavItemWithDropdown: React.FC<NavItemWithDropdownProps> = ({ label, items, basePath }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setIsOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setIsOpen(false), 150);
-  };
-
-  return (
-    <div 
-      className="relative"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <button className="flex items-center gap-1 text-white/90 hover:text-white text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors">
-        {label}
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className={clsx("h-3 w-3 transition-transform duration-200", isOpen && "rotate-180")} 
-          fill="none" 
-          viewBox="0 0 24 24" 
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      
-      <div className={clsx(
-        "absolute top-full left-0 pt-0 min-w-[220px] transition-all duration-200",
-        isOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
-      )}>
-        <div className="bg-white shadow-xl rounded-sm overflow-hidden border-t-2 border-[#15508b]">
-          {items.map((item, idx) => (
-            item.external ? (
-              <a
-                key={idx}
-                href={item.to}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#15508b] transition-colors border-b border-gray-100 last:border-0"
-              >
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={idx}
-                to={`${basePath}${item.to}`}
-                className="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#15508b] transition-colors border-b border-gray-100 last:border-0"
-              >
-                {item.label}
-              </Link>
-            )
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export const Header: React.FC = () => {
   const { currentLocation } = useLocationData();
   const navigate = useNavigate();
@@ -105,19 +29,9 @@ export const Header: React.FC = () => {
 
   const basePath = `/${currentLocation.slug}`;
 
-  const aboutItems: DropdownItem[] = [
-    { label: 'Our Story', to: '/about' },
-    { label: 'Our Vision', to: '/about#vision' },
-    { label: 'Quality Assurance', to: '/about#quality' },
-  ];
-
-  const productItems: DropdownItem[] = [
-    { label: 'Silver Plus', to: '/products/silver-plus' },
-    { label: 'Gold', to: '/products/gold' },
-    { label: 'Elite Silver', to: '/products/elite-silver' },
-    { label: 'Elite Gold', to: '/products/elite-gold' },
-    { label: 'Economy', to: '/products/economy' },
-  ];
+  // Direct destinations (no dropdowns)
+  const aboutLink = `${basePath}/about`;
+  const productsLink = `${basePath}/tiles`;
 
 
   return (
@@ -155,16 +69,18 @@ export const Header: React.FC = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center">
-              <NavItemWithDropdown 
-                label="About Us" 
-                items={aboutItems} 
-                basePath={basePath} 
-              />
-              <NavItemWithDropdown 
-                label="Products" 
-                items={productItems} 
-                basePath={basePath} 
-              />
+              <Link 
+                to={aboutLink}
+                className="text-white/90 hover:text-white text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors"
+              >
+                About Us
+              </Link>
+              <Link 
+                to={productsLink}
+                className="text-white/90 hover:text-white text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors"
+              >
+                Products
+              </Link>
               <Link 
                 to={`${basePath}/gallery`}
                 className="text-white/90 hover:text-white text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors"
@@ -281,31 +197,21 @@ export const Header: React.FC = () => {
           mobileMenuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         )}>
           <div className="container mx-auto px-4 py-6 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
-            <MobileNavSection title="About Us">
-              {aboutItems.map((item, idx) => (
-                <Link 
-                  key={idx}
-                  to={`${basePath}${item.to}`} 
-                  className="block py-2 text-white/70 hover:text-white text-sm pl-4"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </MobileNavSection>
+            <Link 
+              to={aboutLink}
+              className="py-3 text-white font-semibold uppercase tracking-wider border-b border-white/10"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About Us
+            </Link>
 
-            <MobileNavSection title="Products">
-              {productItems.map((item, idx) => (
-                <Link 
-                  key={idx}
-                  to={`${basePath}${item.to}`} 
-                  className="block py-2 text-white/70 hover:text-white text-sm pl-4"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </MobileNavSection>
+            <Link 
+              to={productsLink}
+              className="py-3 text-white font-semibold uppercase tracking-wider border-b border-white/10"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Products
+            </Link>
 
             <Link 
               to={`${basePath}/gallery`}

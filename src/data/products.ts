@@ -1,8 +1,8 @@
 import { Product } from '../../types';
 
-const SIZES = ['10x10 Inch', '12x12 Inch'];
+const SIZES = ['10x10 Inch', '12x12 Inch', '30x30 cm'];
 const FINISHES = ['Matt', 'Textured', 'Anti-Skid', 'Smooth'];
-const COLORS = ['White', 'Terracotta', 'Grey', 'Red', 'Brown', 'Natural'];
+const COLORS = ['White', 'Terracotta', 'Grey', 'Red', 'Brown', 'Natural', 'Blue', 'Ivory', 'Pink', 'Almond'];
 const CATEGORIES = [
   'Cool Roof Tiles',
   'Ceramic Cool Roof Tiles',
@@ -11,8 +11,8 @@ const CATEGORIES = [
   'Premium Rough Grout',
   'Waterproofing Solution (Grout Admixture)'
 ];
-const APPLICATIONS = ['Terrace', 'Roof', 'Commercial Building', 'Residential', 'Industrial'];
-const COLLECTIONS = ['Silver Plus', 'Gold', 'Elite Silver', 'Elite Gold'];
+const APPLICATIONS = ['Terrace', 'Roof', 'Commercial Building', 'Residential', 'Industrial', 'Parking & Exterior Floor'];
+const COLLECTIONS = ['Silver Plus', 'Gold', 'Elite Silver', 'Elite Gold', 'Cool Roof SRI Tiles'];
 
 // Static asset paths (URL-encoded for spaces)
 const IMG_SILVER_PLUS = '/Products/Cool_Roof_Tiles_in_Chennai_Sliver.jpg';
@@ -154,18 +154,60 @@ const OTHER_PRODUCTS: Product[] = [
 
   // Placeholder entries for remaining categories to keep filters functional
   {
-    id: 'vitrified-cool-roof-1',
-    slug: 'vitrified-cool-roof-1',
-    name: 'Vitrified Cool Roof Tile - Sample',
+    id: 'vitrified-cool-roof-blue',
+    slug: 'vitrified-blue',
+    name: 'Vitrified Cool Roof Tile - Blue',
     sku: 'RK-VIT-001',
-    images: [IMG_GOLD],
+    images: ['/Products/Blue.png'],
     category: 'Vitrified Cool Roof Tiles',
-    application: ['Terrace', 'Roof'],
-    collection: 'Vitrified Cool Roof Tiles',
-    size: '12x12 Inch',
-    finish: 'Smooth',
-    color: 'White',
-    shortDesc: 'High-SRI vitrified cool roof tile with anti-skid matte feel and moisture resistance. Reflects heat (target SRI > 90) to cut roof temperatures by ~10–15% while staying durable in heavy foot-traffic areas.'
+    application: ['Terrace', 'Parking & Exterior Floor'],
+    collection: 'Cool Roof SRI Tiles',
+    size: '30x30 cm',
+    finish: 'Matt',
+    color: 'Blue',
+    shortDesc: 'Endura Cool Roof SRI vitrified tile with SRI > 90 for high reflectivity and emissivity. Ideal for terraces, balconies, and exterior floors; improves indoor comfort with robust, durable body.'
+  },
+  {
+    id: 'vitrified-cool-roof-ivory',
+    slug: 'vitrified-ivory',
+    name: 'Vitrified Cool Roof Tile - Ivory',
+    sku: 'RK-VIT-002',
+    images: ['/Products/IVORY-image1.png'],
+    category: 'Vitrified Cool Roof Tiles',
+    application: ['Terrace', 'Parking & Exterior Floor'],
+    collection: 'Cool Roof SRI Tiles',
+    size: '30x30 cm',
+    finish: 'Matt',
+    color: 'Ivory',
+    shortDesc: 'Endura Cool Roof SRI vitrified tile (SRI > 90) with high reflectivity and durable full-body construction. Suited for terraces, balconies, and exterior floors to reduce surface temperature.'
+  },
+  {
+    id: 'vitrified-cool-roof-pink',
+    slug: 'vitrified-pink',
+    name: 'Vitrified Cool Roof Tile - Pink',
+    sku: 'RK-VIT-003',
+    images: ['/Products/Pink.png'],
+    category: 'Vitrified Cool Roof Tiles',
+    application: ['Terrace', 'Parking & Exterior Floor'],
+    collection: 'Cool Roof SRI Tiles',
+    size: '30x30 cm',
+    finish: 'Matt',
+    color: 'Pink',
+    shortDesc: 'Endura Cool Roof SRI vitrified tile (SRI > 90) engineered to reduce surface temperature and improve indoor comfort. Robust body for terraces and exterior floors.'
+  },
+  {
+    id: 'vitrified-cool-roof-almond',
+    slug: 'vitrified-almond',
+    name: 'Vitrified Cool Roof Tile - Almond',
+    sku: 'RK-VIT-004',
+    images: ['/Products/Alomond.png'],
+    category: 'Vitrified Cool Roof Tiles',
+    application: ['Terrace', 'Parking & Exterior Floor'],
+    collection: 'Cool Roof SRI Tiles',
+    size: '30x30 cm',
+    finish: 'Matt',
+    color: 'Almond',
+    shortDesc: 'Endura Cool Roof SRI vitrified tile (SRI > 90) with durable full-body construction. Designed for terraces and exterior floors to keep surfaces cooler and improve comfort.'
   },
   {
     id: 'premium-rough-grout-1',
