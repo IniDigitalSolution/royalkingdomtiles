@@ -12,6 +12,8 @@ export const Catalog: React.FC = () => {
 
   // Filter State
   const activeCategory = searchParams.get('category');
+  const currentPage = Math.max(1, Number(searchParams.get('page') || 1));
+  const pageSize = 9;
   
   // Memoized Filter Logic
   const filteredProducts = useMemo(() => {
@@ -22,12 +24,26 @@ export const Catalog: React.FC = () => {
     });
   }, [activeCategory]);
 
+  const totalPages = Math.max(1, Math.ceil(filteredProducts.length / pageSize));
+  const safePage = Math.min(currentPage, totalPages);
+  const paginatedProducts = useMemo(() => {
+    const start = (safePage - 1) * pageSize;
+    return filteredProducts.slice(start, start + pageSize);
+  }, [filteredProducts, safePage]);
+
   const toggleFilter = (key: string, value: string) => {
     // Simple implementation: Just one filter for category demo
     if (key === 'category') {
         if (activeCategory === value) setSearchParams({});
         else setSearchParams({ category: value });
     }
+  };
+
+  const setPage = (page: number) => {
+    const next = new URLSearchParams(searchParams);
+    if (page <= 1) next.delete('page');
+    else next.set('page', String(page));
+    setSearchParams(next);
   };
 
   const Sidebar = () => (
@@ -128,7 +144,7 @@ export const Catalog: React.FC = () => {
           </div>
 
           <ul className="flex flex-wrap list-none m-0 p-0">
-            {filteredProducts.map(product => (
+            {paginatedProducts.map(product => (
               <li key={product.id} className="flex p-4 w-full md:w-1/2 xl:w-1/3">
                 <div className="bg-white rounded shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden group hover:shadow-2xl transition-shadow duration-300 w-full">
                   {/* Product Image */}
@@ -182,14 +198,47 @@ export const Catalog: React.FC = () => {
             ))}
           </ul>
 
-          {/* Pagination Mock */}
-          <div className="flex justify-center mt-16 gap-2">
-            <button className="w-10 h-10 border hover:bg-gray-100 flex items-center justify-center disabled:opacity-50">&lt;</button>
-            <button className="w-10 h-10 border bg-[#15508b] text-white font-bold flex items-center justify-center">1</button>
-            <button className="w-10 h-10 border hover:bg-gray-100 flex items-center justify-center">2</button>
-            <button className="w-10 h-10 border hover:bg-gray-100 flex items-center justify-center">3</button>
-            <button className="w-10 h-10 border hover:bg-gray-100 flex items-center justify-center">&gt;</button>
-          </div>
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex justify-center mt-16 gap-2">
+              <button
+                className="w-10 h-10 border hover:bg-gray-100 flex items-center justify-center disabled:opacity-50"
+                onClick={() => setPage(safePage - 1)}
+                disabled={safePage <= 1}
+                aria-label="Previous page"
+              >
+                &lt;
+              </button>
+
+              {Array.from({ length: totalPages }).map((_, idx) => {
+                const page = idx + 1;
+                const isActive = page === safePage;
+                return (
+                  <button
+                    key={page}
+                    className={clsx(
+                      "w-10 h-10 border flex items-center justify-center",
+                      isActive ? "bg-[#15508b] text-white font-bold" : "hover:bg-gray-100"
+                    )}
+                    onClick={() => setPage(page)}
+                    aria-label={`Go to page ${page}`}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {page}
+                  </button>
+                );
+              })}
+
+              <button
+                className="w-10 h-10 border hover:bg-gray-100 flex items-center justify-center disabled:opacity-50"
+                onClick={() => setPage(safePage + 1)}
+                disabled={safePage >= totalPages}
+                aria-label="Next page"
+              >
+                &gt;
+              </button>
+            </div>
+          )}
           </div>
         </div>
       </div>
