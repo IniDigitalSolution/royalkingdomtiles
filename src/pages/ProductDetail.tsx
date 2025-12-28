@@ -4,12 +4,13 @@ import { useLocationData } from '../context/LocationContext';
 import { PRODUCTS } from '../data/products';
 import { Button } from '../components/ui/Button';
 
-export const ProductDetail: React.FC = () => {
+export const ProductDetail: React.FC<{ forcedSlug?: string }> = ({ forcedSlug }) => {
   const { slug } = useParams<{ slug: string }>();
   const { currentLocation } = useLocationData();
   const [selectedImage, setSelectedImage] = useState(0);
 
-  const product = PRODUCTS.find(p => p.slug === slug);
+  const effectiveSlug = forcedSlug || slug;
+  const product = PRODUCTS.find(p => p.slug === effectiveSlug);
 
   if (!product) {
     return (

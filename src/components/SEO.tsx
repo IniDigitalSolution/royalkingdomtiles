@@ -98,8 +98,123 @@ export const SEO: React.FC<SEOProps> = ({
     'commercial building tiles'
   ].join(', ');
 
-  const finalTitle = title || defaultTitle;
-  const finalDescription = description || defaultDescription;
+  // Page-specific meta (only used when title/description props are NOT provided)
+  const normalizedPath = (location.pathname || '/').replace(/\/+$/, '') || '/';
+  const pageMeta: Record<string, { title: string; description: string }> = {
+    // Home
+    '/': {
+      title: 'Cool Roof Tiles in Chennai | Chennai’s Best Roof Tiles Dealer – Royal Kingdom Tiles',
+      description:
+        'Looking for Cool Roof Tiles in Chennai? Royal Kingdom Tiles offers heat-resistant roof tiles, vitrified & ceramic cooling tiles for homes, terraces & buildings across Chennai.'
+    },
+    '/chennai': {
+      title: 'Cool Roof Tiles in Chennai | Chennai’s Best Roof Tiles Dealer – Royal Kingdom Tiles',
+      description:
+        'Looking for Cool Roof Tiles in Chennai? Royal Kingdom Tiles offers heat-resistant roof tiles, vitrified & ceramic cooling tiles for homes, terraces & buildings across Chennai.'
+    },
+
+    // About
+    '/about-cool-roof-tiles-dealer-chennai': {
+      title: 'About Royal Kingdom Tiles | Best Cool Roof Tiles Dealer in Chennai',
+      description:
+        'Learn about Royal Kingdom Tiles, Chennai – trusted dealer of cool roof tiles, vitrified & ceramic tiles, clay roof tiles, rough grout and terrace waterproofing solutions.'
+    },
+    '/chennai/about': {
+      title: 'About Royal Kingdom Tiles | Best Cool Roof Tiles Dealer in Chennai',
+      description:
+        'Learn about Royal Kingdom Tiles, Chennai – trusted dealer of cool roof tiles, vitrified & ceramic tiles, clay roof tiles, rough grout and terrace waterproofing solutions.'
+    },
+
+    // Products
+    '/roof-tiles-products-chennai': {
+      title: 'Cool Roof Tiles, Roof Tiles in Chennai | Product List – Royal Kingdom Tiles',
+      description:
+        'Explore all products at Royal Kingdom Tiles Chennai – Cool Roof Tiles, Clay Tiles, Ceramic & Vitrified Tiles, Rough Grout and Terrace Waterproofing Solutions for homes & buildings.'
+    },
+    '/chennai/tiles': {
+      title: 'Cool Roof Tiles, Roof Tiles in Chennai | Product List – Royal Kingdom Tiles',
+      description:
+        'Explore all products at Royal Kingdom Tiles Chennai – Cool Roof Tiles, Clay Tiles, Ceramic & Vitrified Tiles, Rough Grout and Terrace Waterproofing Solutions for homes & buildings.'
+    },
+
+    // Gallery
+    '/cool-roof-tiles-gallery-chennai': {
+      title: 'Gallery | Cool Roof Tiles Product & Installations in Chennai – Royal Kingdom Tiles',
+      description:
+        'View our gallery of Cool Roof Tiles, Ceramic & Vitrified Tiles, Clay Roof Tiles, and terrace waterproofing projects across Chennai. Royal Kingdom Tiles – Trusted tile dealer.'
+    },
+    '/chennai/gallery': {
+      title: 'Gallery | Cool Roof Tiles Product & Installations in Chennai – Royal Kingdom Tiles',
+      description:
+        'View our gallery of Cool Roof Tiles, Ceramic & Vitrified Tiles, Clay Roof Tiles, and terrace waterproofing projects across Chennai. Royal Kingdom Tiles – Trusted tile dealer.'
+    },
+
+    // Contact
+    '/contact-cool-roof-tiles-dealer-chennai': {
+      title: 'Contact Us – Best Cool Roof Tiles & Roof Tiles Dealer in Chennai | Royal Kingdom Tiles',
+      description:
+        'Reach Royal Kingdom Tiles in Chennai for premium roof tiles, terrace cooling tiles, vitrified & ceramic tiles, grout and waterproofing solutions. Chennai’s trusted tile shop.'
+    },
+    '/chennai/contact': {
+      title: 'Contact Us – Best Cool Roof Tiles & Roof Tiles Dealer in Chennai | Royal Kingdom Tiles',
+      description:
+        'Reach Royal Kingdom Tiles in Chennai for premium roof tiles, terrace cooling tiles, vitrified & ceramic tiles, grout and waterproofing solutions. Chennai’s trusted tile shop.'
+    },
+
+    // Ceramic SEO pages (Chennai)
+    '/ceramic-white-cool-roof-tile-chennai': {
+      title: 'Ceramic White Cool Roof Tile in Chennai | Heat Reflective Roofing Tiles',
+      description:
+        'Buy Ceramic White Cool Roof Tiles in Chennai from Royal Kingdom Tiles — high heat reflectivity, energy-saving, UV-resistant ceramic tiles designed to reduce indoor heat and cool your roof effectively.'
+    },
+    '/ceramic-cool-roof-tiles-price-chennai': {
+      title: 'Ceramic Cool Roof Tiles Price Chennai | Royal Kingdom Tiles Best Rate Deals',
+      description:
+        'Check ceramic cool roof tiles price in Chennai from Royal Kingdom Tiles. Heat-reflective ceramic roofing, energy-saving terrace tiles & UV-shield finish at the best rate for homes & buildings.'
+    },
+    '/heat-resistant-ceramic-terrace-tiles-chennai': {
+      title: 'Heat Resistant Ceramic Terrace Tiles Chennai | Royal Kingdom Tiles Roofing Solutions',
+      description:
+        'Buy heat resistant ceramic terrace tiles in Chennai from Royal Kingdom Tiles. UV-block, anti-skid, weather-proof cooling tiles for rooftops, homes & commercial buildings, ideal for Chennai heat.'
+    },
+
+    // Vitrified SEO pages (Chennai)
+    '/vitrified-cool-roof-tile-blue-chennai': {
+      title: 'Blue Vitrified Cool Roof Tile in Chennai | Heat Reflective Terrace Roofing',
+      description:
+        'Buy Blue Vitrified Cool Roof Tile in Chennai from Royal Kingdom Tiles. Heat reflective, durable, anti-skid terrace tile with cooling performance for homes, villas & commercial rooftops.'
+    },
+    '/vitrified-cool-roof-tile-ivory-chennai': {
+      title: 'Ivory Vitrified Cool Roof Tile Chennai | UV Safe Cooling Tiles for Terraces',
+      description:
+        'Ivory vitrified cool roof tiles in Chennai with UV protection, heat resistance & weather-proof finishing. Ideal for terrace cooling, roof renovation & tropical climate temperature control.'
+    },
+    '/vitrified-cool-roof-tile-pink-chennai': {
+      title: 'Pink Vitrified Cool Roof Tile in Chennai | Heat Resistant Terrace Cooling Tile',
+      description:
+        'Choose Pink vitrified cool roof tile in Chennai for terrace cooling, heat reduction & long-lasting protection. Anti-skid surface, water-resistant and perfect for residential & villa rooftops.'
+    },
+    '/vitrified-cool-roof-tile-almond-chennai': {
+      title: 'Almond Vitrified Cool Roof Tile Chennai | High Heat Shield Terrace Roofing',
+      description:
+        'Almond vitrified cool roof tiles in Chennai for strong heat shield performance, energy saving & rooftop protection. Long life vitrified layer with cooling effect for hot Chennai weather.'
+    },
+
+    // Accessories SEO pages (Chennai)
+    '/terrace-premium-rough-grout-chennai': {
+      title: 'Terrace Premium Rough Grout in Chennai | Weather-Safe Tile Joint Solution',
+      description:
+        'Buy Terrace Premium Rough Grout in Chennai for terrace tiles, rooftop flooring & exterior tile joints. Strong adhesion, moisture protection & long-lasting outdoor durability.'
+    },
+    '/waterproofing-grout-admixture-chennai': {
+      title: 'Waterproofing Grout Admixture in Chennai | Moisture & Leak Protection',
+      description:
+        'Buy waterproofing grout admixture in Chennai for tile joints, wet areas & terrace protection. Strengthens adhesion, blocks leaks, and enhances long-term waterproofing performance.'
+    }
+  };
+
+  const finalTitle = title || pageMeta[normalizedPath]?.title || defaultTitle;
+  const finalDescription = description || pageMeta[normalizedPath]?.description || defaultDescription;
   const finalKeywords = keywords || defaultKeywords;
   const canonicalUrl = `https://${domain}${location.pathname}`;
 

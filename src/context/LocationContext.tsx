@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useMemo } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { LOCATIONS } from '../data/locations';
-import { Location } from '../types';
+import { Location } from '../../types';
 
 interface LocationContextType {
   currentLocation: Location;
@@ -13,7 +13,10 @@ export const LocationProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const { locationSlug } = useParams<{ locationSlug: string }>();
   
   const currentLocation = useMemo(() => {
-    return LOCATIONS.find(l => l.slug === locationSlug);
+    // If no slug is present (e.g. SEO-friendly routes like "/roof-tiles-products-chennai"),
+    // default to Chennai so the rest of the app (links, contact info) continues to work.
+    const effectiveSlug = locationSlug || 'chennai';
+    return LOCATIONS.find(l => l.slug === effectiveSlug);
   }, [locationSlug]);
 
   if (!currentLocation) {

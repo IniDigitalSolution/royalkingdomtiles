@@ -92,13 +92,13 @@ const COOL_ROOF_TILES_PRODUCTS: Product[] = [
 
 // Manually mapped products for other categories to use provided assets
 const OTHER_PRODUCTS: Product[] = [
-  // Ceramic Cool Roof Tiles (with main + preview)
+  // Ceramic Cool Roof Tiles (single image)
   {
     id: 'ceramic-cool-roof-1',
     slug: 'ceramic-cool-roof-1',
     name: 'Ceramic Cool Roof Tile - Model 1',
     sku: 'RK-CER-001',
-    images: [IMG_CERAMIC_MAIN_1, IMG_CERAMIC_PREVIEW_1],
+    images: [IMG_CERAMIC_MAIN_1],
     category: 'Ceramic Cool Roof Tiles',
     application: ['Terrace', 'Roof', 'Residential'],
     collection: 'Ceramic Cool Roof Tiles',
@@ -112,13 +112,13 @@ const OTHER_PRODUCTS: Product[] = [
     slug: 'ceramic-cool-roof-2',
     name: 'Ceramic Cool Roof Tile - Model 2',
     sku: 'RK-CER-002',
-    images: [IMG_CERAMIC_MAIN_2, IMG_CERAMIC_PREVIEW_2],
+    images: [IMG_CERAMIC_MAIN_2],
     category: 'Ceramic Cool Roof Tiles',
     application: ['Terrace', 'Roof', 'Commercial Building'],
     collection: 'Ceramic Cool Roof Tiles',
     size: '12x12 Inch',
     finish: 'Textured',
-    color: 'White',
+    color: 'Blue',
     shortDesc: 'Premium ceramic cool roof tile engineered for higher heat reflection and durability.'
   },
   {
@@ -126,13 +126,13 @@ const OTHER_PRODUCTS: Product[] = [
     slug: 'ceramic-cool-roof-3',
     name: 'Ceramic Cool Roof Tile - Model 3',
     sku: 'RK-CER-003',
-    images: [IMG_CERAMIC_MAIN_3, IMG_CERAMIC_PREVIEW_3],
+    images: [IMG_CERAMIC_MAIN_3],
     category: 'Ceramic Cool Roof Tiles',
     application: ['Terrace', 'Roof', 'Industrial'],
     collection: 'Ceramic Cool Roof Tiles',
     size: '12x12 Inch',
     finish: 'Anti-Skid',
-    color: 'Grey',
+    color: 'Pink',
     shortDesc: 'Industrial-grade ceramic cool roof tile with anti-skid finish and reliable cooling.'
   },
 

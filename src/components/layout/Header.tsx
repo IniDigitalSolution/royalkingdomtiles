@@ -28,10 +28,14 @@ export const Header: React.FC = () => {
   };
 
   const basePath = `/${currentLocation.slug}`;
+  const isChennai = currentLocation.slug === 'chennai';
+  const homeLink = isChennai ? '/' : basePath;
 
   // Direct destinations (no dropdowns)
-  const aboutLink = `${basePath}/about`;
-  const productsLink = `${basePath}/tiles`;
+  const aboutLink = isChennai ? '/about-cool-roof-tiles-dealer-chennai' : `${basePath}/about`;
+  const productsLink = isChennai ? '/roof-tiles-products-chennai' : `${basePath}/tiles`;
+  const galleryLink = isChennai ? '/cool-roof-tiles-gallery-chennai' : `${basePath}/gallery`;
+  const contactLink = isChennai ? '/contact-cool-roof-tiles-dealer-chennai' : `${basePath}/contact`;
 
   const navTextClass = isScrolled
     ? "text-white/90 hover:text-white"
@@ -61,7 +65,7 @@ export const Header: React.FC = () => {
         <div className="container mx-auto px-4 relative">
         <div className="flex items-center justify-between">
           {/* Logo */}
-            <Link to={basePath} className="flex items-center gap-3 py-3 group">
+            <Link to={homeLink} className="flex items-center gap-3 py-3 group">
               <div className="relative">
                 <img 
                   src="/Royal_Kingdom_Logo-01.jpg" 
@@ -82,7 +86,7 @@ export const Header: React.FC = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center">
               <Link 
-                to={basePath}
+                to={homeLink}
                 className={clsx(navTextClass, "text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors")}
               >
                 Home
@@ -100,13 +104,13 @@ export const Header: React.FC = () => {
                 Products
               </Link>
               <Link 
-                to={`${basePath}/gallery`}
+                to={galleryLink}
                 className={clsx(navTextClass, "text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors")}
               >
                 Gallery
               </Link>
               <Link 
-                to={`${basePath}/contact`}
+                to={contactLink}
                 className={clsx(navTextClass, "text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors")}
               >
                 Contact Us
@@ -208,7 +212,7 @@ export const Header: React.FC = () => {
             </Link>
 
             <Link 
-              to={`${basePath}/gallery`}
+              to={galleryLink}
               className="py-3 text-white font-semibold uppercase tracking-wider border-b border-white/10"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -216,7 +220,7 @@ export const Header: React.FC = () => {
             </Link>
 
             <Link 
-              to={`${basePath}/contact`}
+              to={contactLink}
               className="py-3 text-white font-semibold uppercase tracking-wider border-b border-white/10"
               onClick={() => setMobileMenuOpen(false)}
             >

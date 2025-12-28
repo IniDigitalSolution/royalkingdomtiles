@@ -4,7 +4,6 @@ import { useLocationData } from '../context/LocationContext';
 import { Button } from '../components/ui/Button';
 import { DesignCategories } from '../components/designs/DesignCategories';
 import { Testimonials } from '../components/testimonials/Testimonials';
-import SEO from '../components/SEO';
 
 // Hero slides base data for the main slider - Kajaria style
 const heroSlidesBase = [
@@ -45,6 +44,8 @@ const galleryImages = [
 
 export const Home: React.FC = () => {
   const { currentLocation } = useLocationData();
+  const tilesLink = currentLocation.slug === 'chennai' ? '/roof-tiles-products-chennai' : `/${currentLocation.slug}/tiles`;
+  const aboutLink = currentLocation.slug === 'chennai' ? '/about-cool-roof-tiles-dealer-chennai' : `/${currentLocation.slug}/about`;
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentGallerySlide, setCurrentGallerySlide] = useState(0);
   const collectionsRef = useRef<HTMLDivElement>(null);
@@ -84,12 +85,6 @@ export const Home: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <SEO 
-        title={`Cool Roof Tiles in ${currentLocation.name} | Heat Reflective Tiles | ₹45/sqft`}
-        description={`🏆 #1 Cool Roof Tiles in ${currentLocation.name}. Royal Kingdom Tiles offers premium heat reflective tiles - reduce temperature by 10-15°C. ✓ 90% Heat Reflection ✓ 100% Waterproof ✓ 10 Year Warranty ✓ Free Delivery. Silver Plus, Gold, Elite Silver, Elite Gold, Economy. Best Price Guaranteed! Call: +91 7200660261`}
-        keywords={`cool roof tiles ${currentLocation.name}, best cool roof tiles ${currentLocation.name}, heat reflective tiles ${currentLocation.name}, waterproof tiles ${currentLocation.name}, terrace cooling tiles ${currentLocation.name}, summer cool tiles ${currentLocation.name}, roof tiles price ${currentLocation.name}, Royal Kingdom Tiles ${currentLocation.name}, heat resistant tiles ${currentLocation.name}, thermal insulation tiles ${currentLocation.name}, AC bill reduction tiles ${currentLocation.name}`}
-      />
     <div className="flex flex-col">
       {/* Hero Section - Kajaria Style Full Screen Slider */}
       <section className="relative w-full overflow-hidden bg-[#0f3d6b] pt-20 md:pt-0">
@@ -199,7 +194,7 @@ export const Home: React.FC = () => {
           ].map((cat, index) => (
               <Link 
                 key={cat.id} 
-                to={`/${currentLocation.slug}/tiles`}
+                to={tilesLink}
                 className="group relative block overflow-hidden hover-lift shine-effect animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -268,7 +263,7 @@ export const Home: React.FC = () => {
             ].map((collection) => (
               <Link
                 key={collection.id}
-                to={`/${currentLocation.slug}/tiles`}
+                to={tilesLink}
                 className="flex-shrink-0 w-[75vw] md:w-[28vw] snap-start group"
               >
                 <div className="relative h-[300px] md:h-[400px] overflow-hidden">
@@ -322,7 +317,7 @@ export const Home: React.FC = () => {
               
               {/* Read More Button */}
               <Link 
-                to={`/${currentLocation.slug}/about`}
+                to={aboutLink}
                 className="inline-flex items-center gap-3 text-white hover:opacity-80 transition-all group btn-glow"
               >
                 <span className="text-sm uppercase tracking-[0.2em] font-medium">Read More</span>
@@ -538,6 +533,5 @@ export const Home: React.FC = () => {
       
       </div>
     </div>
-    </>
   );
 };

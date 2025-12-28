@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useLocation, useParams, Link } from 'react-router-dom';
 import { useLocationData } from '../context/LocationContext';
 import { getProductBySlug, FEATURED_PRODUCTS } from '../data/featuredProducts';
 import SEO from '../components/SEO';
@@ -96,10 +96,44 @@ const getIcon = (iconName: string) => {
   }
 };
 
-export const ProductPage: React.FC = () => {
+export const ProductPage: React.FC<{ forcedSlug?: string }> = ({ forcedSlug }) => {
   const { productSlug } = useParams<{ productSlug: string }>();
   const { currentLocation } = useLocationData();
-  const product = getProductBySlug(productSlug || '');
+  const location = useLocation();
+  const effectiveSlug = forcedSlug || productSlug || '';
+  const product = getProductBySlug(effectiveSlug);
+
+  // SEO landing pages (Chennai) — use exact meta copy as provided.
+  const normalizedPath = (location.pathname || '/').replace(/\/+$/, '') || '/';
+  const landingMeta: Record<string, { title: string; description: string }> = {
+    '/cool-roof-tiles-in-chennai': {
+      title: 'Cool Roof Tiles in Chennai | Low Cost Heat Resistant Terrace Tiles',
+      description:
+        'Buy cool roof tiles in Chennai at low cost from Royal Kingdom Tiles. UV-resistant, heat proof, water-resistant terrace tiles for homes & buildings. Best price & top quality.'
+    },
+    // Elite Silver (new preferred URL)
+    '/cool-roof-tiles-price-chennai': {
+      title: 'Affordable Cool Roof Tiles Price in Chennai | Budget-Friendly Terrace Cooling',
+      description:
+        'Explore affordable cool roof tiles price in Chennai with Royal Kingdom Tiles. Cost-effective cooling tiles for homes & commercial roofs. Save electricity, reduce heat, best value guaranteed.'
+    },
+    // Elite Silver (legacy/alias URL kept for safety)
+    '/affordable-cool-roof-tiles-price-chennai': {
+      title: 'Affordable Cool Roof Tiles Price in Chennai | Budget-Friendly Terrace Cooling',
+      description:
+        'Explore affordable cool roof tiles price in Chennai with Royal Kingdom Tiles. Cost-effective cooling tiles for homes & commercial roofs. Save electricity, reduce heat, best value guaranteed.'
+    },
+    '/cooling-tiles-in-chennai': {
+      title: 'Cooling Tiles in Chennai | Terrace Heat Control Tiles for Homes & Flats',
+      description:
+        'Buy cooling tiles in Chennai for terrace, roof & balconies. Improve heat resistance, reduce room temperature and protect your home from UV exposure. Quality tiles with long-term durability.'
+    },
+    '/cooling-tiles-price-in-chennai': {
+      title: 'Cooling Tiles Price in Chennai | Royal Kingdom Tiles Best Rate Offers',
+      description:
+        'Check cooling tiles price in Chennai from Royal Kingdom Tiles. Compare rates for roof & terrace cooling solutions designed to reduce heat and improve indoor comfort across all property types.'
+    }
+  };
 
   if (!product) {
     return (
@@ -124,8 +158,8 @@ export const ProductPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title={`${product.name} Cool Roof Tiles | Best Price in ${currentLocation.name} | Royal Kingdom Tiles`}
-        description={`🏆 Buy ${product.name} Cool Roof Tiles in ${currentLocation.name} at Best Price. ${product.tagline}. ✓ 90% Heat Reflection ✓ 100% Waterproof ✓ ${product.warranty || '10 Year'} Warranty ✓ Free Delivery. Reduce indoor temperature by 10-15°C. ${product.heroDescription} Call Now: +91 7200660261`}
+        title={landingMeta[normalizedPath]?.title || `${product.name} Cool Roof Tiles | Best Price in ${currentLocation.name} | Royal Kingdom Tiles`}
+        description={landingMeta[normalizedPath]?.description || `🏆 Buy ${product.name} Cool Roof Tiles in ${currentLocation.name} at Best Price. ${product.tagline}. ✓ 90% Heat Reflection ✓ 100% Waterproof ✓ ${product.warranty || '10 Year'} Warranty ✓ Free Delivery. Reduce indoor temperature by 10-15°C. ${product.heroDescription} Call Now: +91 7200660261`}
         keywords={`${product.name} tiles, ${product.name} tiles price, ${product.name} cool roof tiles ${currentLocation.name}, ${product.name} heat reflective tiles, buy ${product.name} tiles ${currentLocation.name}, ${product.name} tiles near me, Royal Kingdom Tiles ${product.name}, best ${product.name} tiles India`}
         type="product"
         productName={product.name}

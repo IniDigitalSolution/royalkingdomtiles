@@ -4,6 +4,7 @@ import { useLocationData } from '../context/LocationContext';
 import { PRODUCTS, FILTERS } from '../data/products';
 import { Button } from '../components/ui/Button';
 import { clsx } from 'clsx';
+import { getChennaiSeoProductUrl } from '../utils/seoLinks';
 
 export const Catalog: React.FC = () => {
   const { currentLocation } = useLocationData();
@@ -31,6 +32,14 @@ export const Catalog: React.FC = () => {
       return true;
     });
   }, [activeCategory]);
+
+  const getProductLink = (slug: string) => {
+    if (currentLocation.slug === 'chennai') {
+      const seoUrl = getChennaiSeoProductUrl(slug);
+      if (seoUrl) return seoUrl;
+    }
+    return `/${currentLocation.slug}/tiles/${slug}`;
+  };
 
   const toggleFilter = (key: string, value: string) => {
     // Simple implementation: Just one filter for category demo
@@ -155,7 +164,7 @@ export const Catalog: React.FC = () => {
 
                   {/* Product Content */}
                   <div className="flex flex-1 flex-col p-6">
-                    <Link to={`/${currentLocation.slug}/tiles/${product.slug}`}>
+                    <Link to={getProductLink(product.slug)}>
                       <h3 className="text-gray-700 text-lg font-light tracking-[2px] uppercase mb-2 group-hover:text-[#15508b] transition-colors">
                         {product.name}
                       </h3>
@@ -169,7 +178,7 @@ export const Catalog: React.FC = () => {
 
                     {/* Actions */}
                     <div className="flex gap-2">
-                      <Link to={`/${currentLocation.slug}/tiles/${product.slug}`} className="flex-1">
+                      <Link to={getProductLink(product.slug)} className="flex-1">
                         <button className="block w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors uppercase text-xs font-semibold">
                           View Details
                         </button>

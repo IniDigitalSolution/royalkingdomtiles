@@ -40,6 +40,7 @@ const CATEGORIES = [
 
 export const Gallery: React.FC = () => {
   const { currentLocation } = useLocationData();
+  const tilesLink = currentLocation.slug === 'chennai' ? '/roof-tiles-products-chennai' : `/${currentLocation.slug}/tiles`;
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [lightboxImage, setLightboxImage] = useState<GalleryImage | null>(null);
 
@@ -146,7 +147,7 @@ export const Gallery: React.FC = () => {
               Get Free Consultation
             </a>
             <a
-              href={`/${currentLocation.slug}/tiles`}
+              href={tilesLink}
               className="inline-block bg-[#15508b] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#15508b]-dark transition-colors shadow-md hover:shadow-lg"
             >
               Browse Catalog

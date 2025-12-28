@@ -6,6 +6,10 @@ import { BUSINESS_INFO } from '../../data/locations';
 export const Footer: React.FC = () => {
   const { currentLocation } = useLocationData();
   const [email, setEmail] = useState('');
+  const isChennai = currentLocation.slug === 'chennai';
+  const homeLink = isChennai ? '/' : `/${currentLocation.slug}`;
+  const contactLink = isChennai ? '/contact-cool-roof-tiles-dealer-chennai' : `/${currentLocation.slug}/contact`;
+  const productsPageLink = isChennai ? '/roof-tiles-products-chennai' : `/${currentLocation.slug}/tiles`;
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +31,7 @@ export const Footer: React.FC = () => {
             {/* Logo & Newsletter Section */}
             <div className="lg:col-span-2">
               {/* Logo */}
-              <Link to={`/${currentLocation.slug}`} className="inline-flex items-center gap-3 mb-6 group">
+              <Link to={homeLink} className="inline-flex items-center gap-3 mb-6 group">
                 <img 
                   src="/Royal_Kingdom_Logo-01.jpg" 
                   alt="Royal Kingdom Logo" 
@@ -116,32 +120,32 @@ export const Footer: React.FC = () => {
               <h4 className="text-white font-semibold mb-6">Products</h4>
               <ul className="space-y-3">
                 <li>
-                  <Link to={`/${currentLocation.slug}/tiles?category=Clay Roof Tiles`} className="text-white/60 hover:text-white transition-colors text-sm">
+                  <Link to={productsPageLink} className="text-white/60 hover:text-white transition-colors text-sm">
                     Clay Roof Tiles
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/${currentLocation.slug}/tiles?category=Cool Roof Tiles`} className="text-white/60 hover:text-white transition-colors text-sm">
+                  <Link to={productsPageLink} className="text-white/60 hover:text-white transition-colors text-sm">
                     Cool Roof Tiles
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/${currentLocation.slug}/tiles?category=Vitrified Cool Roof Tiles`} className="text-white/60 hover:text-white transition-colors text-sm">
+                  <Link to={productsPageLink} className="text-white/60 hover:text-white transition-colors text-sm">
                     Vitrified Cool Roof Tiles
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/${currentLocation.slug}/tiles?category=Ceramic Cool Roof Tiles`} className="text-white/60 hover:text-white transition-colors text-sm">
+                  <Link to={productsPageLink} className="text-white/60 hover:text-white transition-colors text-sm">
                     Ceramic Cool Roof Tiles
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/${currentLocation.slug}/tiles?category=Cool Roof Tiles Premium Grout`} className="text-white/60 hover:text-white transition-colors text-sm">
+                  <Link to={productsPageLink} className="text-white/60 hover:text-white transition-colors text-sm">
                     Cool Roof Tiles Premium Grout
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/${currentLocation.slug}/tiles?category=Waterproofing Admixture`} className="text-white/60 hover:text-white transition-colors text-sm">
+                  <Link to={productsPageLink} className="text-white/60 hover:text-white transition-colors text-sm">
                     Waterproofing Admixture
                   </Link>
                 </li>
@@ -205,7 +209,7 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <Link to={`/${currentLocation.slug}/contact`} className="text-white/60 hover:text-white transition-colors text-sm">
+                  <Link to={contactLink} className="text-white/60 hover:text-white transition-colors text-sm">
                     Contact Us
                   </Link>
                 </li>
