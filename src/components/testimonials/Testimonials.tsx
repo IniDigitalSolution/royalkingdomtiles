@@ -18,31 +18,31 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 2,
     name: 'Priya Selvam',
-    location: 'Madurai',
+    location: 'Chennai',
     text: 'Bought clay tiles from Royal Kingdom. The quality is excellent, long-lasting, and the pricing is very reasonable. Truly value for money.'
   },
   {
     id: 3,
     name: 'Murugan S',
-    location: 'Coimbatore',
+    location: 'Chennai',
     text: 'I opted for ceramic cool roof tiles for our commercial building. Great finishing, slip-resistant and helps control indoor temperature. Very satisfied with the affordable cost.'
   },
   {
     id: 4,
     name: 'Arun Prasad',
-    location: 'Trichy',
+    location: 'Chennai',
     text: 'Royal Kingdom supplied vitrified cool roof tiles for our apartment project. Strong tiles, premium look, and best wholesale pricing in Chennai.'
   },
   {
     id: 5,
     name: 'Lakshmi Narayan',
-    location: 'Salem',
+    location: 'Chennai',
     text: 'The cost savings impressed me. Cool roof tiles reduced heat and lowered our electricity bills. A very budget-friendly option for terrace protection.'
   },
   {
     id: 6,
     name: 'Karthik Raja',
-    location: 'Kanyakumari',
+    location: 'Chennai',
     text: 'We compared cost with other suppliers before purchasing. Royal Kingdom offered genuine pricing for clay and ceramic tiles, with excellent support throughout the process.'
   }
 ];
