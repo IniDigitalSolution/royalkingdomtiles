@@ -473,7 +473,7 @@ export const SEO: React.FC<SEOProps> = ({
           '@type': 'ListItem',
           position: 2,
           name: locationName,
-          item: `https://${domain}/#/${currentLocation?.slug || 'chennai'}`
+          item: `https://${domain}/${currentLocation?.slug || 'chennai'}`
         }
       ]
     };
@@ -492,7 +492,8 @@ export const SEO: React.FC<SEOProps> = ({
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: `https://${domain}/#/search?q={search_term_string}`
+          // We don't have a dedicated /search route; use location-aware catalog with a query param.
+          urlTemplate: `https://${domain}/${currentLocation?.slug || 'chennai'}/tiles?q={search_term_string}`
         },
         'query-input': 'required name=search_term_string'
       }

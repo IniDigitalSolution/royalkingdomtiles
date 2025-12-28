@@ -17,7 +17,7 @@ A modern, multi-location e-commerce tile catalog application built with React, T
 
 - **Frontend**: React 19 with TypeScript
 - **Build Tool**: Vite
-- **Routing**: React Router DOM v7 (HashRouter)
+- **Routing**: React Router DOM v7 (BrowserRouter)
 - **Styling**: Tailwind CSS v4
 - **State Management**: React Context API
 - **Deployment**: Vercel

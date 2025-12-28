@@ -31,7 +31,7 @@ The app uses **location slugs** in the URL to dynamically render location-specif
 - Routes follow the pattern: `/:locationSlug/*` (e.g., `/chennai/tiles`, `/mumbai/contact`)
 - Default location is Chennai (`/` redirects to `/chennai`)
 - Invalid location slugs automatically redirect to Chennai
-- HashRouter is used for deployment compatibility
+- BrowserRouter is used (Vercel SPA rewrites handle deep links)
 
 ### Context Architecture
 

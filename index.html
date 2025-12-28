@@ -321,6 +321,21 @@
 </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Backward-compatible redirect: convert old HashRouter URLs (/#/chennai/...) to clean paths (/chennai/...)
+      (function () {
+        try {
+          if (window.location.hash && window.location.hash.startsWith('#/')) {
+            const newPath = window.location.hash.slice(1); // remove leading '#'
+            // Preserve existing querystring (if any). HashRouter usually doesn't use search, but keep it safe.
+            const search = window.location.search || '';
+            window.history.replaceState(null, '', newPath + search);
+          }
+        } catch (e) {
+          // no-op
+        }
+      })();
+    </script>
     <script type="module" src="/index.tsx"></script>
     
     <!-- Google Analytics placeholder - Replace UA-XXXXXXXX-X with your tracking ID -->

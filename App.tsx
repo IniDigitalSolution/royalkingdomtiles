@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './src/components/layout/Layout';
 import { Home } from './src/pages/Home';
 import { Catalog } from './src/pages/Catalog';
@@ -12,7 +12,7 @@ import { Gallery } from './src/pages/Gallery';
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/chennai" replace />} />
 
@@ -29,7 +29,7 @@ function App() {
 
         <Route path="*" element={<Navigate to="/chennai" replace />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
