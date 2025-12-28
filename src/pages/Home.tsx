@@ -92,70 +92,77 @@ export const Home: React.FC = () => {
       />
     <div className="flex flex-col">
       {/* Hero Section - Kajaria Style Full Screen Slider */}
-      <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen w-full overflow-hidden bg-white pt-16 md:pt-0">
-        {/* Hero Slides */}
-        {heroSlides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-              index === currentSlide 
-                ? 'opacity-100 z-10' 
-                : 'opacity-0 z-0'
-            }`}
-          >
-            {/* Image only */}
-            <div className="absolute inset-0 overflow-hidden">
-              <img 
-                src={slide.image} 
-                alt={slide.title} 
-                className="w-full h-full object-contain sm:object-cover object-center"
-              />
-            </div>
-          </div>
-        ))}
-
-        {/* Left Arrow */}
-        <button
-          onClick={() => setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
-          className="flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 items-center justify-center text-white hover:text-white transition-all z-20 group"
-          aria-label="Previous slide"
-        >
-          <div className="relative w-full h-full flex items-center justify-center">
-            <span className="absolute inset-0 rounded-full border-2 border-white/40 bg-black/35 group-hover:bg-black/55 group-hover:border-white/70 transition-colors backdrop-blur-[2px]"></span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7 relative" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
-          </svg>
-          </div>
-        </button>
-        
-        {/* Right Arrow */}
-        <button
-          onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
-          className="flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 items-center justify-center text-white hover:text-white transition-all z-20 group"
-          aria-label="Next slide"
-        >
-          <div className="relative w-full h-full flex items-center justify-center">
-            <span className="absolute inset-0 rounded-full border-2 border-white/40 bg-black/35 group-hover:bg-black/55 group-hover:border-white/70 transition-colors backdrop-blur-[2px]"></span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7 relative" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
-          </svg>
-          </div>
-        </button>
-
-        {/* Pagination Dots */}
-        <div className="absolute bottom-4 sm:bottom-6 md:bottom-12 left-1/2 transform -translate-x-1/2 flex gap-2 md:gap-3 z-20">
-          {heroSlides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              className={`h-2.5 md:h-3 rounded-full transition-all duration-300 ${
-                idx === currentSlide 
-                  ? 'bg-white w-8 md:w-10' 
-                  : 'bg-white/40 hover:bg-white/60 w-2.5 md:w-3'
+      <section className="relative w-full overflow-hidden bg-[#0f3d6b] pt-20 md:pt-0">
+        {/* 
+          Mobile: lock hero to 16:9 (all slide assets are 16:9) to avoid "letterbox" blank space with object-contain.
+          Desktop: allow full screen hero.
+        */}
+        <div className="relative w-full aspect-video md:aspect-auto md:min-h-screen overflow-hidden">
+          {/* Hero Slides */}
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                index === currentSlide 
+                  ? 'opacity-100 z-10' 
+                  : 'opacity-0 z-0'
               }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
+            >
+              {/* Image only */}
+              <div className="absolute inset-0 overflow-hidden">
+                <img 
+                  src={slide.image} 
+                  alt={slide.title} 
+                  className="w-full h-full object-contain md:object-cover object-center"
+                />
+              </div>
+            </div>
           ))}
+
+          {/* Left Arrow */}
+          <button
+            onClick={() => setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
+            className="flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 items-center justify-center text-white hover:text-white transition-all z-20 group"
+            aria-label="Previous slide"
+          >
+            <div className="relative w-full h-full flex items-center justify-center">
+              <span className="absolute inset-0 rounded-full border-2 border-white/40 bg-black/35 group-hover:bg-black/55 group-hover:border-white/70 transition-colors backdrop-blur-[2px]"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7 relative" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+              </svg>
+            </div>
+          </button>
+          
+          {/* Right Arrow */}
+          <button
+            onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
+            className="flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 items-center justify-center text-white hover:text-white transition-all z-20 group"
+            aria-label="Next slide"
+          >
+            <div className="relative w-full h-full flex items-center justify-center">
+              <span className="absolute inset-0 rounded-full border-2 border-white/40 bg-black/35 group-hover:bg-black/55 group-hover:border-white/70 transition-colors backdrop-blur-[2px]"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7 relative" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </button>
+
+          {/* Pagination Dots */}
+          <div className="absolute bottom-4 sm:bottom-6 md:bottom-12 left-1/2 transform -translate-x-1/2 flex gap-2 md:gap-3 z-20">
+            {heroSlides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={
+                  "w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-300 border " +
+                  (idx === currentSlide
+                    ? "bg-white border-white"
+                    : "bg-white/30 border-white/50 hover:bg-white/50")
+                }
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -164,7 +171,7 @@ export const Home: React.FC = () => {
 
       {/* Find Tiles by Category */}
         <section 
-          className="py-2 md:py-12 relative -mt-9 md:mt-8"
+          className="py-2 md:py-12 relative mt-4 md:mt-8"
         style={{ 
           backgroundImage: 'url(/image.png)',
           backgroundSize: 'cover',

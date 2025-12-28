@@ -107,8 +107,8 @@ export const AboutUs: React.FC = () => {
                   <div className="w-16 h-16 bg-[#15508b]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#15508b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       {item.icon}
-                    </svg>
-                  </div>
+                  </svg>
+                </div>
                   <h3 className="text-xl font-bold text-secondary mb-3">{item.title}</h3>
                   <p className="text-gray-600">{item.desc}</p>
                 </div>
@@ -180,13 +180,13 @@ export const AboutUs: React.FC = () => {
               },
             ].map((item, idx) => (
               <div key={idx} className="flex gap-4">
-                <div className="flex-shrink-0">
+              <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-[#15508b] text-white rounded-full flex items-center justify-center font-bold">{idx + 1}</div>
-                </div>
-                <div>
+              </div>
+              <div>
                   <h3 className="text-xl font-bold text-secondary mb-2">{item.title}</h3>
                   <p className="text-gray-600">{item.desc}</p>
-                </div>
+            </div>
               </div>
             ))}
           </div>

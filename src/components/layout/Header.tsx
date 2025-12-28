@@ -33,18 +33,30 @@ export const Header: React.FC = () => {
   const aboutLink = `${basePath}/about`;
   const productsLink = `${basePath}/tiles`;
 
+  const navTextClass = isScrolled
+    ? "text-white/90 hover:text-white"
+    : "text-black/80 hover:text-black";
+
+  const iconTextClass = isScrolled
+    ? "text-white/80 hover:text-white"
+    : "text-black/70 hover:text-black";
+
+  const logoTitleClass = isScrolled ? "text-white" : "text-black";
+  const logoTaglineClass = isScrolled ? "text-white/70" : "text-black/60";
 
   return (
     <>
       {/* Header */}
-    <header className={clsx(
+    <header
+      className={clsx(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isScrolled 
-          ? "header-gradient shadow-lg" 
-          : "bg-gradient-to-b from-black/50 to-transparent"
-    )}>
+        isScrolled
+          ? "header-gradient shadow-lg"
+          : "bg-gradient-to-b from-white/70 to-transparent"
+      )}
+    >
         {/* Noise texture overlay */}
-        <div className="absolute inset-0 opacity-30 pointer-events-none bg-noise"></div>
+        <div className="absolute inset-0 opacity-10 pointer-events-none bg-noise"></div>
         
         <div className="container mx-auto px-4 relative">
         <div className="flex items-center justify-between">
@@ -58,10 +70,10 @@ export const Header: React.FC = () => {
                 />
             </div>
             <div className="flex flex-col">
-                <span className="text-white text-xl font-extrabold tracking-wider leading-none uppercase" style={{ fontFamily: 'Cinzel, serif' }}>
+                <span className={clsx(logoTitleClass, "text-xl font-extrabold tracking-wider leading-none uppercase")} style={{ fontFamily: 'Cinzel, serif' }}>
                   Royal Kingdom
                 </span>
-                <span className="text-white/70 text-[9px] font-medium tracking-[0.15em] mt-1" style={{ fontFamily: 'Cinzel, serif' }}>
+                <span className={clsx(logoTaglineClass, "text-[9px] font-medium tracking-[0.15em] mt-1")} style={{ fontFamily: 'Cinzel, serif' }}>
                   Royal Protection. Kingdom Quality.
                 </span>
             </div>
@@ -71,25 +83,25 @@ export const Header: React.FC = () => {
             <nav className="hidden lg:flex items-center">
               <Link 
                 to={aboutLink}
-                className="text-white/90 hover:text-white text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors"
+                className={clsx(navTextClass, "text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors")}
               >
                 About Us
               </Link>
               <Link 
                 to={productsLink}
-                className="text-white/90 hover:text-white text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors"
+                className={clsx(navTextClass, "text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors")}
               >
                 Products
               </Link>
               <Link 
                 to={`${basePath}/gallery`}
-                className="text-white/90 hover:text-white text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors"
+                className={clsx(navTextClass, "text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors")}
               >
                 Gallery
               </Link>
               <Link 
                 to={`${basePath}/contact`}
-                className="text-white/90 hover:text-white text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors"
+                className={clsx(navTextClass, "text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors")}
               >
                 Contact Us
               </Link>
@@ -100,7 +112,7 @@ export const Header: React.FC = () => {
               {/* Where to Buy */}
               <Link 
                 to={`${basePath}/where-to-buy`}
-                className="hidden md:flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium uppercase tracking-wider px-4 py-2 transition-colors"
+                className={clsx(navTextClass, "hidden md:flex items-center gap-2 text-sm font-medium uppercase tracking-wider px-4 py-2 transition-colors")}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -109,36 +121,12 @@ export const Header: React.FC = () => {
                 <span className="hidden xl:inline">Where to Buy</span>
               </Link>
 
-              {/* Location Selector */}
-              <div className="hidden md:block relative group">
-                <button className="flex items-center gap-2 text-white/80 hover:text-white text-xs font-medium uppercase tracking-wider px-3 py-2 border border-white/20 rounded hover:border-white/40 transition-all">
-                  <span>{currentLocation.name}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-              </button>
-                <div className="absolute right-0 top-full pt-2 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white shadow-xl rounded-sm overflow-hidden border-t-2 border-[#15508b] max-h-60 overflow-y-auto">
-                  {LOCATIONS.map(loc => (
-                    <button
-                      key={loc.slug}
-                      onClick={() => handleLocationChange(loc.slug)}
-                      className={clsx(
-                          "w-full text-left px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-0",
-                          loc.slug === currentLocation.slug ? "text-[#15508b] font-semibold bg-[#15508b]/5" : "text-gray-700"
-                      )}
-                    >
-                      {loc.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
+              {/* Location Selector removed */}
 
               {/* Search Icon */}
               <button 
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="p-2 text-white/80 hover:text-white transition-colors"
+                className={clsx(iconTextClass, "p-2 transition-colors")}
                 aria-label="Search"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -148,7 +136,7 @@ export const Header: React.FC = () => {
 
             {/* Mobile Menu Toggle */}
               <button 
-                className="lg:hidden p-2 text-white" 
+                className={clsx(iconTextClass, "lg:hidden p-2")}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
               >
@@ -241,26 +229,7 @@ export const Header: React.FC = () => {
               Where to Buy
             </Link>
 
-            {/* Mobile Location Selector */}
-            <div className="pt-4">
-              <span className="text-xs font-bold text-white/50 uppercase tracking-wider">Select Location</span>
-              <div className="grid grid-cols-2 gap-2 mt-3">
-                {LOCATIONS.map(loc => (
-                  <button
-                    key={loc.slug}
-                    onClick={() => handleLocationChange(loc.slug)}
-                    className={clsx(
-                      "text-left px-3 py-2 text-sm rounded border transition-colors",
-                      loc.slug === currentLocation.slug 
-                        ? "border-[#15508b] text-[#15508b] bg-[#15508b]/10" 
-                        : "border-white/20 text-white/70 hover:border-white/40"
-                    )}
-                  >
-                    {loc.name}
-                  </button>
-                ))}
-              </div>
-            </div>
+            {/* Mobile Location Selector removed */}
           </div>
         </div>
       </header>
