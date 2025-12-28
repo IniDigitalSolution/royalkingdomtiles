@@ -82,6 +82,12 @@ export const Header: React.FC = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center">
               <Link 
+                to={basePath}
+                className={clsx(navTextClass, "text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors")}
+              >
+                Home
+              </Link>
+              <Link 
                 to={aboutLink}
                 className={clsx(navTextClass, "text-sm font-medium uppercase tracking-wider px-4 py-6 transition-colors")}
               >

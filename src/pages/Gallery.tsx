@@ -125,11 +125,17 @@ export const Gallery: React.FC = () => {
 
         {/* Call to Action */}
         <section className="bg-gray-50 rounded-lg p-12 text-center">
-          <h2 className="text-3xl font-bold text-secondary mb-4">Ready to Transform Your Space?</h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Visit our {currentLocation.name} showroom to see our full collection in person and get expert advice
-            from our design consultants.
+          <h2 className="text-3xl font-bold text-secondary mb-4">Ready to Upgrade Your Terrace or Roof?</h2>
+          <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
+            Discover our latest collection of Cool Roof Tiles and Clay Roof Tiles designed for Chennai’s heat and
+            coastal climate. Visit our showroom to explore every model in person and get expert guidance from our tile
+            specialists.
           </p>
+          <div className="text-gray-800 font-medium mb-8 max-w-3xl mx-auto space-y-2">
+            <div>✓ Personalized Design Consultation</div>
+            <div>✓ Full Product Display &amp; Quality Check</div>
+            <div>✓ Best Cooling Tiles for Terrace &amp; Roof</div>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`https://wa.me/${currentLocation.whatsappNumber}`}
