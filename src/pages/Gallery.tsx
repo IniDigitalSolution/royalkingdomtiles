@@ -22,16 +22,12 @@ const GALLERY_IMAGES: GalleryImage[] = [
   { id: 8, url: '/Products/Alomond.png', title: 'Almond - Vitrified Cool Roof', category: 'Vitrified Cool Roof Tiles' },
 
   // Ceramic Cool Roof Tiles
-  { id: 9, url: '/Products/Ceramic%20600x600%20Main%20Image.jpg', title: 'Ceramic 600x600 Main', category: 'Ceramic Cool Roof Tiles' },
-  { id: 10, url: '/Products/Ceramic%20Preview%20Image%20300%20x%20300.jpg', title: 'Ceramic 600x600 Preview', category: 'Ceramic Cool Roof Tiles' },
-  { id: 11, url: '/Products/Product%202%20Main%20Ceramic%20Cool%20Roof%20Tile%20600%20x600.jpg', title: 'Ceramic Product 2 Main', category: 'Ceramic Cool Roof Tiles' },
-  { id: 12, url: '/Products/Product%202%20Ceramic%20Cool%20Roof%20Tile%20300%20x300.jpg', title: 'Ceramic Product 2 Preview', category: 'Ceramic Cool Roof Tiles' },
-  { id: 13, url: '/Products/Ceramic%20Product%203%20main%20image%20600x600.jpg', title: 'Ceramic Product 3 Main', category: 'Ceramic Cool Roof Tiles' },
-  { id: 14, url: '/Products/Ceramic%20product%203%20preview%20300x300.jpg', title: 'Ceramic Product 3 Preview', category: 'Ceramic Cool Roof Tiles' },
+  { id: 9, url: '/Products/Ceramic%20600x600%20Main%20Image.jpg', title: 'Ceramic Cool Roof Tile - Model 1', category: 'Ceramic Cool Roof Tiles' },
+  { id: 10, url: '/Products/Product%202%20Main%20Ceramic%20Cool%20Roof%20Tile%20600%20x600.jpg', title: 'Ceramic Cool Roof Tile - Model 2', category: 'Ceramic Cool Roof Tiles' },
+  { id: 11, url: '/Products/Ceramic%20Product%203%20main%20image%20600x600.jpg', title: 'Ceramic Cool Roof Tile - Model 3', category: 'Ceramic Cool Roof Tiles' },
 
   // Clay Tiles
-  { id: 15, url: '/Products/Clay%20Tile%20Main%20Product%20Image%20600x600.jpg', title: 'Clay Tile Main', category: 'Clay Tiles' },
-  { id: 16, url: '/Products/Clay%20Tiles%20Preview%20Image%20300x300.jpg', title: 'Clay Tile Preview', category: 'Clay Tiles' },
+  { id: 12, url: '/Products/Clay%20Tile%20Main%20Product%20Image%20600x600.jpg', title: 'Clay Roof Tile - Model 1', category: 'Clay Tiles' },
 ];
 
 const CATEGORIES = [
