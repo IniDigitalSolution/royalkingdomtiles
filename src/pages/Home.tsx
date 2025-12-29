@@ -8,18 +8,6 @@ import { Testimonials } from '../components/testimonials/Testimonials';
 // Hero slides base data for the main slider - Kajaria style
 const heroSlidesBase = [
   {
-    image: '/Home Page Slide/Ceramic_Cool_Roof_Tiles_in_Chennai_3.png',
-    title: 'Beat the Heat\nStay Cool',
-    subtitle: 'Premium cool roof tiles that reduce indoor temperature by 10-15°C. Energy efficient, eco-friendly solutions for your home.',
-    productSlug: 'silver-plus'
-  },
-  {
-    image: '/Home Page Slide/Clay_Roof_Tiles_in_Chennai_4.png',
-    title: 'Shaping Dreams\nInto Living Spaces',
-    subtitle: 'Advanced dual-layer technology for maximum heat reflection and waterproof protection.',
-    productSlug: 'gold'
-  },
-  {
     image: '/Home Page Slide/Cool_Roof_Tiles_Dealer_in_Chennai_1.jpeg',
     title: 'Where Quality\nMeets Innovation',
     subtitle: '90% heat reflection, 100% waterproof. Built to endure, designed to impress.',
@@ -30,6 +18,18 @@ const heroSlidesBase = [
     title: 'Beauty That Lasts\nBeyond Seasons',
     subtitle: 'Our cool roof tiles bring lasting beauty and comfort to every season.',
     productSlug: 'elite-silver'
+  },
+  {
+    image: '/Home Page Slide/Ceramic_Cool_Roof_Tiles_in_Chennai_3.png',
+    title: 'Beat the Heat\nStay Cool',
+    subtitle: 'Premium cool roof tiles that reduce indoor temperature by 10-15°C. Energy efficient, eco-friendly solutions for your home.',
+    productSlug: 'silver-plus'
+  },
+  {
+    image: '/Home Page Slide/Clay_Roof_Tiles_in_Chennai_4.png',
+    title: 'Shaping Dreams\nInto Living Spaces',
+    subtitle: 'Advanced dual-layer technology for maximum heat reflection and waterproof protection.',
+    productSlug: 'gold'
   }
 ];
 
