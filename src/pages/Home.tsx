@@ -14,19 +14,19 @@ const heroSlidesBase = [
     productSlug: 'elite-gold'
   },
   {
-    image: '/Home Page Slide/Cooling_Roof_Tiles_in_Chennai_2.png',
+    image: '/Home Page Slide/Cooling_Roof_Tiles_in_Chennai_2.jpg',
     title: 'Beauty That Lasts\nBeyond Seasons',
     subtitle: 'Our cool roof tiles bring lasting beauty and comfort to every season.',
     productSlug: 'elite-silver'
   },
   {
-    image: '/Home Page Slide/Ceramic_Cool_Roof_Tiles_in_Chennai_3.png',
+    image: '/Home Page Slide/Ceramic_Cool_Roof_Tiles_in_Chennai_3.jpg',
     title: 'Beat the Heat\nStay Cool',
     subtitle: 'Premium cool roof tiles that reduce indoor temperature by 10-15°C. Energy efficient, eco-friendly solutions for your home.',
     productSlug: 'silver-plus'
   },
   {
-    image: '/Home Page Slide/Clay_Roof_Tiles_in_Chennai_4.png',
+    image: '/Home Page Slide/Clay_Roof_Tiles_in_Chennai_4.jpg',
     title: 'Shaping Dreams\nInto Living Spaces',
     subtitle: 'Advanced dual-layer technology for maximum heat reflection and waterproof protection.',
     productSlug: 'gold'
@@ -117,6 +117,8 @@ export const Home: React.FC = () => {
                     src={slide.image}
                     alt={slide.title}
                     className="w-full h-full object-contain md:object-cover object-center"
+                    width={1920}
+                    height={1080}
                     loading={index === 0 ? 'eager' : 'lazy'}
                     fetchPriority={index === 0 ? 'high' : 'auto'}
                     decoding="async"

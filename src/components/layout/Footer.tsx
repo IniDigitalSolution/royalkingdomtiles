@@ -38,10 +38,10 @@ export const Footer: React.FC = () => {
                   className="w-14 h-14 object-contain group-hover:scale-105 transition-transform rounded-sm"
                 />
                 <div className="flex flex-col">
-                  <span className="text-white text-xl font-extrabold tracking-wider leading-none uppercase" style={{ fontFamily: 'Cinzel, serif' }}>
+                  <span className="text-white text-xl font-extrabold tracking-wider leading-none uppercase">
                     Royal Kingdom
                   </span>
-                  <span className="text-white/70 text-[9px] font-medium tracking-[0.15em] mt-1" style={{ fontFamily: 'Cinzel, serif' }}>
+                  <span className="text-white/70 text-[9px] font-medium tracking-[0.15em] mt-1">
                     Royal Protection. Kingdom Quality.
                   </span>
                 </div>

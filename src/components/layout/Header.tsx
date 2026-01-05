@@ -74,10 +74,10 @@ export const Header: React.FC = () => {
                 />
             </div>
             <div className="flex flex-col">
-                <span className={clsx(logoTitleClass, "text-xl font-extrabold tracking-wider leading-none uppercase")} style={{ fontFamily: 'Cinzel, serif' }}>
+                <span className={clsx(logoTitleClass, "text-xl font-extrabold tracking-wider leading-none uppercase")}>
                   Royal Kingdom
                 </span>
-                <span className={clsx(logoTaglineClass, "text-[9px] font-medium tracking-[0.15em] mt-1")} style={{ fontFamily: 'Cinzel, serif' }}>
+                <span className={clsx(logoTaglineClass, "text-[9px] font-medium tracking-[0.15em] mt-1")}>
                   Royal Protection. Kingdom Quality.
                 </span>
             </div>
