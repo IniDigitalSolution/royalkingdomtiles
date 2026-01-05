@@ -90,50 +90,8 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google.com" />
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#15508b',
-              'primary-dark': '#0f3d6b',
-              secondary: '#333333',
-              dark: '#212529',
-              light: '#f8f9fa',
-              gray: {
-                100: '#f2f2f2',
-                200: '#e9ecef',
-                300: '#dee2e6',
-                500: '#adb5bd',
-                700: '#495057',
-                800: '#343a40',
-              }
-            },
-            fontFamily: {
-              sans: ['"Open Sans"', 'sans-serif'],
-            },
-            container: {
-              center: true,
-              padding: '1rem',
-              screens: {
-                xl: '1200px',
-                '2xl': '1400px',
-              },
-            },
-            boxShadow: {
-              'card': '0 2px 15px rgba(0,0,0,0.05)',
-              'card-hover': '0 5px 20px rgba(0,0,0,0.1)',
-              'sticky': '0 2px 10px rgba(0,0,0,0.05)',
-            }
-          },
-        },
-      }
-    </script>
+    <!-- Preload LCP (first hero slide) -->
+    <link rel="preload" as="image" href="/Home Page Slide/Cool_Roof_Tiles_Dealer_in_Chennai_1.jpeg" fetchpriority="high" />
     
     <!-- Structured Data - Organization Schema -->
     <script type="application/ld+json">
@@ -278,7 +236,7 @@
           }
         }
       ]
-    }
+      }
     </script>
 
     <style>
@@ -305,19 +263,6 @@
       }
     </style>
     
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
-    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^3.4.0",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>
